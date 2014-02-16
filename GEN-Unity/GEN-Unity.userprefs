@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Timer.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyAI.cs">
     <Files>
-      <File FileName="Assets\Scripts\Guiscrollers.cs" Line="28" Column="36" />
-      <File FileName="Assets\Scripts\Timer.cs" Line="12" Column="3" />
+      <File FileName="Assets\Scripts\EnemyAI.cs" Line="22" Column="36" />
+      <File FileName="Assets\Scripts\Guiscrollers.cs" Line="41" Column="36" />
+      <File FileName="Assets\Scripts\Timer.cs" Line="20" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

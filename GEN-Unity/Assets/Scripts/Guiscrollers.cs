@@ -29,7 +29,6 @@ public class Guiscrollers : MonoBehaviour {
 		}else if(speed2<0)
 		{
 			speed2rotation= speed2*speedinc;
-			print (speed2rotation);
 			shield2.transform.Rotate (0,speed2rotation*Time.deltaTime,0,Space.Self);
 		}
 		//Player rotation
@@ -40,7 +39,6 @@ public class Guiscrollers : MonoBehaviour {
 		}else if(speed1<0)
 		{
 			speed1rotation= speed1*speedinc;
-			print (speed1rotation);
 			playercontroller.transform.Rotate (0,speed1rotation*Time.deltaTime,0,Space.World);
 		}
 	}

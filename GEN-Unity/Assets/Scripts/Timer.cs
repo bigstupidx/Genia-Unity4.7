@@ -14,6 +14,11 @@ public class Timer : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		if(timercount ==0)
+		{
+			leveltimer.text = "You Survived";
+		}
 	}
 
 	IEnumerator Countdown()
