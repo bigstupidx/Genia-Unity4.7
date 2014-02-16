@@ -5,7 +5,6 @@ public class EnemyAI : MonoBehaviour {
 
 	private Transform ptarget;
 	private Vector3 targetvector;
-	private float targetdistance =0;
 
 
 	// Use this for initialization
@@ -19,9 +18,9 @@ public class EnemyAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.LookAt(ptarget);
-		targetdistance = Vector3.Distance(transform.position,targetvector);
-		print ("distance " + targetdistance);
-		transform.Translate(0,0,20*Time.deltaTime);
 
+		//random gen
+		transform.Translate(0,0,20*Time.deltaTime);
 	}
+	
 }
