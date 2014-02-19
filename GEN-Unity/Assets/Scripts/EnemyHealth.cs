@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour {
 		{
 			health = health -1;
 		}
-		if(health ==0 || !EnemyAIscript.enabled)
+		if(health ==0 && EnemyAIscript.enabled)
 		{
 			EnemyAIscript.enabled = !EnemyAIscript.enabled;
 			rigidbody.freezeRotation = true;
