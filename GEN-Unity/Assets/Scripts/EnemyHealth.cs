@@ -5,6 +5,7 @@ public class EnemyHealth : MonoBehaviour {
 
 	public int health =0;
 	private EnemyAI EnemyAIscript;
+	public GameObject deadbouy;
 
 
 	// Use this for initialization
@@ -26,7 +27,9 @@ public class EnemyHealth : MonoBehaviour {
 		if(health ==0 && EnemyAIscript.enabled)
 		{
 			EnemyAIscript.enabled = !EnemyAIscript.enabled;
+			Instantiate(deadbouy,transform.position,transform.rotation);
 			rigidbody.freezeRotation = true;
+			Destroy(this.gameObject);
 		}
 	}
 }
