@@ -4,13 +4,15 @@ using System.Collections;
 public class DeadenemyAI : MonoBehaviour {
 	
 	private GameObject collector;
-	private Collider sucker;
-	private Transform target;
+	private Transform etarget;
+	private int edead;
+
 
 	// Use this for initialization
 	void Start () {
 		collector = GameObject.Find ("inner");
-		target= collector.transform;
+		etarget= collector.transform;
+		edead = 1;
 	}
 	
 	// Update is called once per frame
@@ -18,11 +20,10 @@ public class DeadenemyAI : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(){
-
-		if(sucker.gameObject.name == "sucker")
-		{
-			transform.position = Vector3.MoveTowards(transform.position,target.position,0f);
-		}
+	void OnTriggerEnter(Collider sucker ){
+		print ("trigger");
+		//transform.position = Vector3.MoveTowards(transform.position,etarget.position,10f);
+		GameMaster.deadcount += edead;
+		Destroy (this.gameObject);
 	}
 }
