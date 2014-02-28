@@ -17,7 +17,6 @@ public class GameMaster : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		print (deadcount);
 		bool startsucker = Input.GetKeyDown(KeyCode.Space);
 
 		if(startsucker){

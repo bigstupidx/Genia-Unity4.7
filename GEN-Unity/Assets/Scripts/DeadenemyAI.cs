@@ -21,8 +21,6 @@ public class DeadenemyAI : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider sucker ){
-		print ("trigger");
-		//transform.position = Vector3.MoveTowards(transform.position,etarget.position,10f);
 		GameMaster.deadcount += edead;
 		Destroy (this.gameObject);
 	}
