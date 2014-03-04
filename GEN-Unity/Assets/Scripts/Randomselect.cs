@@ -12,9 +12,13 @@ public class Randomselect : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+	
+ 
+	}
+
+	void Awake(){
 		ranint = Random.Range(0,ranweapon.Length);
 		renderer.material =ranweapon[ranint];
- 
 	}
 	
 	// Update is called once per frame

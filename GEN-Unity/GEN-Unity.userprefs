@@ -2,9 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Randomselect.cs">
     <Files>
-      <File FileName="Assets\Scripts\allbutton.cs" Line="22" Column="34" />
-      <File FileName="Assets\Scripts\Guiscrollers.cs" Line="15" Column="32" />
-      <File FileName="Assets\Scripts\Randomselect.cs" Line="36" Column="3" />
+      <File FileName="Assets\Scripts\Randomselect.cs" Line="21" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
