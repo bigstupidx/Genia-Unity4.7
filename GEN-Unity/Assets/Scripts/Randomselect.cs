@@ -7,18 +7,19 @@ public class Randomselect : MonoBehaviour {
 	public int weaponamount =0;
 	private int ranint;
 	public int rancount = 0;
+	public int resetcount;
 	private Material chosenweapon;
  
 
 	// Use this for initialization
 	void Start () {
-	
- 
+		resetcount =rancount;
 	}
 
-	void Awake(){
+	void OnEnable(){
 		ranint = Random.Range(0,ranweapon.Length);
 		renderer.material =ranweapon[ranint];
+
 	}
 	
 	// Update is called once per frame
@@ -43,6 +44,7 @@ public class Randomselect : MonoBehaviour {
 	IEnumerator Onesec()
 	{
 		yield return new WaitForSeconds(3f);
+		rancount = resetcount;
 		gameObject.SetActive(false);
 	}
 }
