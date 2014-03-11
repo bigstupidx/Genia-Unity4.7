@@ -20,24 +20,16 @@ public class GameMaster : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-
 		bool startsucker = Input.GetKeyDown(KeyCode.Space);
 
-		if((deadcount == suckedup)&& (!rangen.activeSelf))
-		{
-			rangen.SetActive(true);
+		if(deadcount == suckedup)
+		   {
 			deadcount = 0;
+			if(!rangen.activeSelf)
+		{
+			rangen.SetActive(true);	
 		}
-		/*
-		if(startsucker){
-			if(!sucker.activeSelf)
-			{
-				sucker.SetActive(true);
-			}
 
-}*/
-
-
+		}
 	}
 }

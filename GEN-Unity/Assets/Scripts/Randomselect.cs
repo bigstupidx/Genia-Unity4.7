@@ -34,7 +34,28 @@ public class Randomselect : MonoBehaviour {
 		if(rancount <=0){
 		chosenweapon = ranweapon[ranint];
 		renderer.material = chosenweapon;
-		print(rancount);
+		switch (ranint)
+			{
+			case 0:
+				print ("bullets");
+				pbullets.pbulletactive = true;
+				break;
+			case 1:
+				print ("expand");
+				break;
+			case 2:
+				print ("freeze");
+				break;
+			case 3:
+				print ("missles");
+				break;
+			case 4:
+				print ("speed");
+				break;
+			case 5:
+				print("waves");
+				break;
+			}
 		StartCoroutine(Onesec());
 		
 		}
@@ -43,8 +64,9 @@ public class Randomselect : MonoBehaviour {
 
 	IEnumerator Onesec()
 	{
-		yield return new WaitForSeconds(3f);
 		rancount = resetcount;
 		gameObject.SetActive(false);
+		yield return new WaitForSeconds(3f);
+	
 	}
 }

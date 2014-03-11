@@ -21,7 +21,10 @@ public class DeadenemyAI : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider sucker ){
+
+		if(sucker.gameObject.name == "sucker"){
 		GameMaster.deadcount += edead;
 		Destroy (this.gameObject);
+		}
 	}
 }
