@@ -22,12 +22,13 @@ public class pbullets : MonoBehaviour {
 		if(pbulletactive && weaponlimit>0)
 		   {
 			StartCoroutine (Slower());
-			Instantiate(playerbullets, turretpos[chosenturret].transform.position, turretpos[chosenturret].transform.rotation);
-			weaponlimit = weaponlimit-1;
+
 		}
 	}
 
 	IEnumerator Slower(){
+		Instantiate(playerbullets, turretpos[chosenturret].transform.position, turretpos[chosenturret].transform.rotation);
+		weaponlimit = weaponlimit-1;
 		chosenturret = Random.Range(0,turretpos.Length-1);
 		yield return new WaitForSeconds(.5f);
 	}

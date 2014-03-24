@@ -13,7 +13,7 @@ public class GameMaster : MonoBehaviour {
 	void Start () {
 		rangen = GameObject.Find("Randomer");
 
-//		sucker = GameObject.Find("sucker");
+
 		rangen.SetActive(false);
 		deadcount =0;
 	}
@@ -24,6 +24,8 @@ public class GameMaster : MonoBehaviour {
 
 		if(deadcount == suckedup)
 		   {
+			sucker = GameObject.Find("sucker");
+			sucker.SetActive(false);
 			deadcount = 0;
 			if(!rangen.activeSelf)
 		{
