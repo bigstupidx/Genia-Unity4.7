@@ -24,8 +24,9 @@ public class EnemyAI : MonoBehaviour {
 
 		if(Vector3.Distance(ptarget.position,transform.position)>distance)
 		{
-			transform.Translate(0,0,espeed*Time.deltaTime);
-
+			//this.rigidbody.AddForce(Vector3.forward * espeed,ForceMode.Impulse);
+		//  transform.Translate(0,0,espeed*Time.deltaTime);
+			rigidbody.velocity = transform.forward * espeed;
 		}
 
 		//if(Vector3.Distance(ptarget.position,transform.position)==distance)
@@ -40,7 +41,8 @@ public class EnemyAI : MonoBehaviour {
 				rfloat = 1f;
 			}
 
-			transform.Translate(30f*Time.deltaTime*rfloat,0,0);
+			rigidbody.velocity = transform.right*30f*rfloat;
+			//transform.Translate(30f*Time.deltaTime*rfloat,0,0);
 		}
 
 

@@ -20,7 +20,7 @@ public class EnemyHealth : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.CompareTag("pattack"))
+		if(other.CompareTag("Player"))
 		{
 			health = health -1;
 		}

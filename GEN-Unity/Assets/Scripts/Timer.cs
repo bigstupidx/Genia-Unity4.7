@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(timercount ==0)
+		if(timercount ==200)
 		{
 			leveltimer.text = "You Survived";
 		}
@@ -24,12 +24,12 @@ public class Timer : MonoBehaviour {
 	IEnumerator Countdown()
 	{
 
-		while(timercount>0){
-		timercount = timercount-1;
+	//	while(timercount>0){
+		timercount = timercount+1;
 		yield return new WaitForSeconds(1f);
 		leveltimer.text = timercount.ToString();
-		}
+	//	}
 	
-		yield return 0;
+	//	yield return 0;
 	}
 }

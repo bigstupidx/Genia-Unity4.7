@@ -10,7 +10,7 @@ public class DeadenemyAI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		collector = GameObject.Find ("inner");
+		collector = GameObject.Find ("Playerbody");
 		etarget= collector.transform;
 		edead = 1;
 	}
