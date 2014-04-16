@@ -5,6 +5,7 @@ public class Timer : MonoBehaviour {
 
 	public GUIText leveltimer;
 	public float timercount = 0;
+	public float beattime = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -15,21 +16,22 @@ public class Timer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(timercount ==200)
+		if(timercount == beattime)
 		{
 			leveltimer.text = "You Survived";
 		}
+	 
 	}
 
 	IEnumerator Countdown()
 	{
 
-	//	while(timercount>0){
+		while(timercount<beattime+1){
 		timercount = timercount+1;
 		yield return new WaitForSeconds(1f);
 		leveltimer.text = timercount.ToString();
-	//	}
+		}
 	
-	//	yield return 0;
+		yield return 0;
 	}
 }

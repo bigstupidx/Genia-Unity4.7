@@ -5,9 +5,10 @@ public class EnemyAI : MonoBehaviour {
 
 	private Transform ptarget;
 	private Vector3 targetvector;
-	public float distance;
+	public float playerdistance;
 	private float rfloat;
 	public float espeed;
+	public float rotatespeed;
 
 
 	// Use this for initialization
@@ -19,11 +20,12 @@ public class EnemyAI : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		transform.LookAt(ptarget);
+	void FixedUpdate () {
+	
 
-		if(Vector3.Distance(ptarget.position,transform.position)>distance)
+		if(Vector3.Distance(ptarget.position,transform.position)>playerdistance)
 		{
+			transform.LookAt(ptarget);
 			//this.rigidbody.AddForce(Vector3.forward * espeed,ForceMode.Impulse);
 		//  transform.Translate(0,0,espeed*Time.deltaTime);
 			rigidbody.velocity = transform.forward * espeed;
@@ -31,17 +33,18 @@ public class EnemyAI : MonoBehaviour {
 
 		//if(Vector3.Distance(ptarget.position,transform.position)==distance)
 		else {
-
+			transform.LookAt(ptarget);
 			if(rfloat<0)
 			{
 				rfloat = -1f;
+				rigidbody.velocity = transform.right*rotatespeed*rfloat;
 			}
 			else
 			{
 				rfloat = 1f;
 			}
 
-			rigidbody.velocity = transform.right*30f*rfloat;
+
 			//transform.Translate(30f*Time.deltaTime*rfloat,0,0);
 		}
 

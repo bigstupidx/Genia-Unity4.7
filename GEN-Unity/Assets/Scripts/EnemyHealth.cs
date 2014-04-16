@@ -18,9 +18,9 @@ public class EnemyHealth : MonoBehaviour {
 	
 	
 	}
-	void OnTriggerEnter(Collider other)
+	void OnCollisionEnter(Collision other)
 	{
-		if(other.CompareTag("Player"))
+		if(other.collider.name == "Playerbody")
 		{
 			health = health -1;
 		}
