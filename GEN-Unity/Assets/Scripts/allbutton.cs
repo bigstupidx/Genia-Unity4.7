@@ -24,7 +24,7 @@ public class allbutton : MonoBehaviour {
 
 	void OnGUI () {
 
-			if (GUI.Button (new Rect (100,Screen.height -100,150,20), "Suck'em")) {
+			if (GUI.Button (new Rect (100,Screen.height -100,150,50), "Suck'em")) {
 			if( !weaponchoice.activeSelf)
 			{
 				weaponchoice.SetActive(true);

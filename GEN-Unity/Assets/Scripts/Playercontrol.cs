@@ -8,8 +8,7 @@ public class Playercontrol : MonoBehaviour {
 	private bool godown;
 	private bool goleft;
 	private bool goright;
-	public int phealth;
-
+	public int phealth = 0;
 
 
 	// Use this for initialization
@@ -23,11 +22,15 @@ public class Playercontrol : MonoBehaviour {
 	void OnCollisionEnter(Collision pcollide)
 	{
 
-		if(pcollide.collider.name == "bbullet")
+		if(pcollide.collider.tag == "eattack")
 		{
-			print ("collision of bullet");
+		//	print ("collision of bullet");
 			phealth = phealth-1;
-			//renderer.material.color.
+
+			if(phealth ==0)
+			{
+				Application.LoadLevel(Application.loadedLevel);
+			}
 		}
 
 	}
@@ -62,7 +65,7 @@ public class Playercontrol : MonoBehaviour {
 
 	void OnGUI()
 	{
-		if(GUI.RepeatButton(new Rect(Screen.width-200,Screen.height -325,100,100),"^"))
+		if(GUI.RepeatButton(new Rect(Screen.width-200,Screen.height -350,100,100),"^"))
 		{
 			goup = true;
 		//	print("goup is true");
@@ -71,7 +74,7 @@ public class Playercontrol : MonoBehaviour {
 			goup =false;
 		}
 	
-		if(GUI.RepeatButton(new Rect(Screen.width-200,Screen.height -225,100,100),"v"))
+		if(GUI.RepeatButton(new Rect(Screen.width-200,Screen.height -150,100,100),"v"))
 		{
 			godown =true;
 		//	print("godown is true");
@@ -80,7 +83,7 @@ public class Playercontrol : MonoBehaviour {
 			godown =false;
 		}
 
-		if(GUI.RepeatButton(new Rect(Screen.width-250,Screen.height -260,100,100),"<"))
+		if(GUI.RepeatButton(new Rect(Screen.width-300,Screen.height -250,100,100),"<"))
 		{
 			goleft =true;
 		//	print("godown is true");
@@ -89,7 +92,7 @@ public class Playercontrol : MonoBehaviour {
 			goleft =false;
 		}
 
-		if(GUI.RepeatButton(new Rect(Screen.width-150,Screen.height -260,100,100),">"))
+		if(GUI.RepeatButton(new Rect(Screen.width-100,Screen.height -250,100,100),">"))
 		{
 			goright =true;
 		//	print("godown is true");

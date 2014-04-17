@@ -9,6 +9,9 @@ public class EnemyAI : MonoBehaviour {
 	private float rfloat;
 	public float espeed;
 	public float rotatespeed;
+	private Transform friend;
+	private Vector3 friendvector;
+
 
 
 	// Use this for initialization
