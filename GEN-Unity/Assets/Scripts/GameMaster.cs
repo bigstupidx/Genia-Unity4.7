@@ -13,7 +13,6 @@ public class GameMaster : MonoBehaviour {
 	void Start () {
 		rangen = GameObject.Find("Randomer");
 
-
 		rangen.SetActive(false);
 		deadcount =0;
 	}

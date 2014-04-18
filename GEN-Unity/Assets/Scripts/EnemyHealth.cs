@@ -24,6 +24,12 @@ public class EnemyHealth : MonoBehaviour {
 		{
 			health = health -1;
 		}
+
+		if(other.collider.tag == "pattack")
+		{
+			health = health -1;
+		}
+
 		if(health ==0 && EnemyAIscript.enabled)
 		{
 			EnemyAIscript.enabled = !EnemyAIscript.enabled;

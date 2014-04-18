@@ -44,6 +44,8 @@ public class Randomselect : MonoBehaviour {
 				print ("expand");
 				break;
 			case 2:
+				EnemyAI.freezer = true;
+
 				print ("freeze");
 				break;
 			case 3:
@@ -64,9 +66,10 @@ public class Randomselect : MonoBehaviour {
 
 	IEnumerator Onesec()
 	{
+		yield return new WaitForSeconds(3f);
 		rancount = resetcount;
 		gameObject.SetActive(false);
-		yield return new WaitForSeconds(3f);
+	
 	
 	}
 }

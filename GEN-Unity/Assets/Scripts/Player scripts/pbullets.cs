@@ -7,10 +7,12 @@ public class pbullets : MonoBehaviour {
 	public GameObject playerbullets;
 	private GameObject[] turretpos;
 	private int chosenturret;
-	public int weaponlimit;
+	public int weaponlimit = 0;
+	private int templimit;
 
 	// Use this for initialization
 	void Start () {
+		templimit = weaponlimit;
 		turretpos = GameObject.FindGameObjectsWithTag("turret2s");
 		print (chosenturret);
 		print (turretpos.Length);
@@ -18,19 +20,25 @@ public class pbullets : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-		if(pbulletactive && weaponlimit>0)
-		   {
-			StartCoroutine (Slower());
-
-		}
+		StartCoroutine (Slower());
 	}
 
 	IEnumerator Slower(){
-		Instantiate(playerbullets, turretpos[chosenturret].transform.position, turretpos[chosenturret].transform.rotation);
-		weaponlimit = weaponlimit-1;
-		chosenturret = Random.Range(0,turretpos.Length-1);
-		yield return new WaitForSeconds(.5f);
+
+	
+		if(pbulletactive && weaponlimit>0)
+		{
+			yield return new WaitForSeconds(1f);
+			chosenturret = Random.Range(0,turretpos.Length);
+
+			Instantiate(playerbullets, turretpos[chosenturret].transform.position, turretpos[chosenturret].transform.rotation);
+			weaponlimit = weaponlimit-1;				
+		}
+		else{
+			pbulletactive = false;
+			weaponlimit = templimit;
+		}
+
 	}
 }
 

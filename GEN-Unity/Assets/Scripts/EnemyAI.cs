@@ -11,7 +11,8 @@ public class EnemyAI : MonoBehaviour {
 	public float rotatespeed;
 	private Transform friend;
 	private Vector3 friendvector;
-
+	public static bool freezer = false;
+	public float freezetime =0;
 
 
 	// Use this for initialization
@@ -25,6 +26,9 @@ public class EnemyAI : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 	
+		if(!freezer)
+		{
+
 
 		if(Vector3.Distance(ptarget.position,transform.position)>playerdistance)
 		{
@@ -46,14 +50,25 @@ public class EnemyAI : MonoBehaviour {
 			{
 				rfloat = 1f;
 			}
-
+			
 
 			//transform.Translate(30f*Time.deltaTime*rfloat,0,0);
 		}
+		}
+		else 
+		{
+			StartCoroutine(Unfreeze());
+		}
 
+	
+	}
 
-		//random gen
-	//	transform.Translate(0,0,20*Time.deltaTime);
+	IEnumerator Unfreeze()
+	{
+		transform.FindChild("Nose shooter").gameObject.SetActive(false);
+		yield return new WaitForSeconds(freezetime);
+		freezer = false;
+		transform.FindChild("Nose shooter").gameObject.SetActive(true);
 	}
 	
 }
