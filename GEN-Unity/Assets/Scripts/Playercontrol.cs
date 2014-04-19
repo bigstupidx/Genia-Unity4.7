@@ -8,7 +8,6 @@ public class Playercontrol : MonoBehaviour {
 	private bool godown;
 	private bool goleft;
 	private bool goright;
-	public int phealth = 0;
 
 	private Vector3 playerscale;
 	//public vector3 largerscale;
@@ -42,25 +41,7 @@ public class Playercontrol : MonoBehaviour {
 		goleft =false;
 		goright =false;
 	}
-
-
-
-	void OnCollisionEnter(Collision pcollide)
-	{
-
-		if(pcollide.collider.tag == "eattack")
-		{
-		//	print ("collision of bullet");
-			phealth = phealth-1;
-
-			if(phealth ==0)
-			{
-				Application.LoadLevel(Application.loadedLevel);
-			}
-		}
-
-	}
-
+	
 	// Update is called once per frame
 	void FixedUpdate() {
 	

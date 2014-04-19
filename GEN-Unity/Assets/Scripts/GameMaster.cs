@@ -4,10 +4,15 @@ using System.Collections;
 public class GameMaster : MonoBehaviour {
 
 	private GameObject mainplayer;
+	public GameObject Renemy;
 	private GameObject sucker;
 	public static int deadcount;
+	public static int respawncounter = 0;
 	public int suckedup;
 	private GameObject rangen;
+	private GameObject[] respots;
+	private int respotsamount;
+	private int ranrespot;
 
 	// Use this for initialization
 	void Start () {
@@ -15,22 +20,44 @@ public class GameMaster : MonoBehaviour {
 
 		rangen.SetActive(false);
 		deadcount =0;
+
+		respots = GameObject.FindGameObjectsWithTag("Respawner");
+		respotsamount = respots.Length;
+		print (respotsamount);
+		ranrespot = Random.Range(0,respotsamount-1);
+
+		sucker = GameObject.Find("sucker");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		bool startsucker = Input.GetKeyDown(KeyCode.Space);
+
+		Creator();
+	
 
 		if(deadcount == suckedup)
 		   {
-			sucker = GameObject.Find("sucker");
+			if(!rangen.activeSelf)
+			{
 			sucker.SetActive(false);
 			deadcount = 0;
-			if(!rangen.activeSelf)
-		{
 			rangen.SetActive(true);	
 		}
+		}
+	}
+
+	void Creator()
+	{
+		if(respawncounter >0)
+		{
+			Instantiate(Renemy, respots[ranrespot].transform.position, respots[ranrespot].transform.rotation);
+			respawncounter = respawncounter -1;	
+		}
+		else
+		{
 
 		}
+	
+	
 	}
 }

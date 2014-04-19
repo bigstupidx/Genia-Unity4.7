@@ -4,7 +4,7 @@ using System.Collections;
 public class Timer : MonoBehaviour {
 
 	public GUIText leveltimer;
-	public float timercount = 0;
+	private float timercount = 0;
 	public float beattime = 0;
 
 	// Use this for initialization

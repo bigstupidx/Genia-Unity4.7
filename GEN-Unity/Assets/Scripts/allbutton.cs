@@ -27,10 +27,12 @@ public class allbutton : MonoBehaviour {
 		}
 		if(GUI.Button(new Rect (200,0,100,50), "Restart Demo"))
 		{
+			pbullets.pbulletactive =false;
+			EnemyAI.freezer = false;
 			Application.LoadLevel(Application.loadedLevel);
 		}
 
-			if (GUI.Button (new Rect (100,Screen.height -100,150,50), "Suck'em")) {
+			if (GUI.Button (new Rect (100,Screen.height -150,150,150), "Suck'em")) {
 			if( !weaponchoice.activeSelf)
 			{
 				weaponchoice.SetActive(true);

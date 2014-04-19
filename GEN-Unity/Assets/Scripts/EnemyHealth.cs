@@ -32,6 +32,8 @@ public class EnemyHealth : MonoBehaviour {
 
 		if(health ==0 && EnemyAIscript.enabled)
 		{
+			GameMaster.respawncounter++;
+			DeadEnemyCounter.enemiesdead++;
 			EnemyAIscript.enabled = !EnemyAIscript.enabled;
 			Instantiate(deadbouy,transform.position,transform.rotation);
 			rigidbody.freezeRotation = true;

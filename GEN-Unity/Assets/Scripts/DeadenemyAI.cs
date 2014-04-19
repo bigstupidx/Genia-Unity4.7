@@ -14,11 +14,7 @@ public class DeadenemyAI : MonoBehaviour {
 		etarget= collector.transform;
 		edead = 1;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 
 	void OnTriggerEnter(Collider sucker ){
 

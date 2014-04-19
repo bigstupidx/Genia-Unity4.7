@@ -19,19 +19,7 @@ public class Guiscrollers : MonoBehaviour {
 	void OnGUI () {
 		//scroll bars to do rotation
 	//	speed2 = GUI.VerticalScrollbar(new Rect(100, 130, 50, 50), speed2, 1.0F, 2.0F, -1.0F);
-		speed1 = GUI.VerticalScrollbar(new Rect(150, 130, 150, 100), speed1, 1.0F, 2.0F, -1.0F);
-
-		//determin direction of ouside shield
-	/*	if(speed2>0)
-		{
-			speed2rotation= speed2*speedinc;
-			shield2.transform.Rotate (0,speed2rotation*Time.deltaTime,0,Space.Self);
-		}else if(speed2<0)
-		{
-			speed2rotation= speed2*speedinc;
-			shield2.transform.Rotate (0,speed2rotation*Time.deltaTime,0,Space.Self);
-		}
-		*/
+		speed1 = GUI.VerticalScrollbar(new Rect(150, 130, 150, 150), speed1, 1.0F, 2.0F, -1.0F);
 
 		//Player rotation
 		if(speed1>0)
@@ -44,8 +32,5 @@ public class Guiscrollers : MonoBehaviour {
 			playercontroller.transform.Rotate (0,speed1rotation*Time.deltaTime,0,Space.World);
 		}
 	}
-
-	
-	// Update is called once per frame
 
 }
