@@ -10,6 +10,30 @@ public class Playercontrol : MonoBehaviour {
 	private bool goright;
 	public int phealth = 0;
 
+	private Vector3 playerscale;
+	//public vector3 largerscale;
+	public float scalesize;
+	public static bool makelarger = false;
+	
+	//make larger scale 15
+	
+//	void Update()
+//		
+//	{
+//		playerscale = transform.lossyscale;
+//		
+//		if(makelarger){
+//			
+//			transform.localScale(15,0,15);
+//		}    
+//		
+//		do{
+//			transform.localeScale(scalesize -.01f,0,scalesize - .01f);
+//		}
+//		
+//		while(transform.lossyscale != playerscale);
+//	}
+
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +42,8 @@ public class Playercontrol : MonoBehaviour {
 		goleft =false;
 		goright =false;
 	}
+
+
 
 	void OnCollisionEnter(Collision pcollide)
 	{

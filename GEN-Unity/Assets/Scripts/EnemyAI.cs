@@ -22,9 +22,38 @@ public class EnemyAI : MonoBehaviour {
 		targetvector = GameObject.FindWithTag("Player").transform.position;
 		rfloat = Random.Range(-20,20);	
 	}
+
+	void FixedUpdate() {
+		
+		if(!freezer)
+		{
+			transform.LookAt(ptarget);
+
+			if(Vector3.Distance(ptarget.position,transform.position)>playerdistance)
+			{
+				rigidbody.velocity = transform.forward * espeed;
+			}else if(Vector3.Distance(ptarget.position,transform.position)<= playerdistance)
+			{
+				rigidbody.velocity = transform.forward * espeed *-1;
+			}
+	
+			
+				if(rfloat<0)
+			{
+				rfloat = -1f;
+				rigidbody.velocity = transform.right*rotatespeed*rfloat;
+			}
+		}
+		else 
+		{
+			StartCoroutine(Unfreeze());
+		}
+		
+	}
+
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+/*	void FixedUpdate () {
 	
 		if(!freezer)
 		{
@@ -59,9 +88,8 @@ public class EnemyAI : MonoBehaviour {
 		{
 			StartCoroutine(Unfreeze());
 		}
-
-	
 	}
+	*/
 
 	IEnumerator Unfreeze()
 	{
