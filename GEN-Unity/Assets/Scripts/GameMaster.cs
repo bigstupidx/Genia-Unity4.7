@@ -34,15 +34,26 @@ public class GameMaster : MonoBehaviour {
 
 		Creator();
 	
-
 		if(deadcount == suckedup)
-		   {
+		{
 			if(!rangen.activeSelf)
 			{
-			sucker.SetActive(false);
-			deadcount = 0;
-			rangen.SetActive(true);	
+				sucker.SetActive(false);
+				deadcount = 0;
+				rangen.SetActive(true);    
+			}
 		}
+		else if(deadcount > suckedup)
+			
+		{
+			deadcount = deadcount - suckedup;
+			
+			if(!rangen.activeSelf)
+			{
+				sucker.SetActive(false);
+				deadcount = 0;
+				rangen.SetActive(true);    
+			}
 		}
 	}
 

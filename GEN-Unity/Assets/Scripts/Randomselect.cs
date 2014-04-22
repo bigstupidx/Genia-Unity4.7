@@ -19,7 +19,6 @@ public class Randomselect : MonoBehaviour {
 	void OnEnable(){
 		ranint = Random.Range(0,ranweapon.Length);
 		renderer.material =ranweapon[ranint];
-
 	}
 	
 	// Update is called once per frame
@@ -49,7 +48,9 @@ public class Randomselect : MonoBehaviour {
 				print ("freeze");
 				break;
 			case 3:
-				print ("missles");
+				Playerhealth.uphealth = true;
+				
+				print ("increase health");
 				break;
 			case 4:
 				print ("speed");
@@ -66,10 +67,8 @@ public class Randomselect : MonoBehaviour {
 
 	IEnumerator Onesec()
 	{
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(1.5f);
 		rancount = resetcount;
 		gameObject.SetActive(false);
-	
-	
 	}
 }

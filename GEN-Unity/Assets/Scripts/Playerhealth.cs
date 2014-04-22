@@ -6,6 +6,8 @@ public class Playerhealth : MonoBehaviour {
 	public static int phealth;
 	public int mainhealth = 0;
 	public GUIText currenthealth;
+	public int healthint =0;
+	public static bool uphealth = false;
 
 	void Start()
 
@@ -16,12 +18,25 @@ public class Playerhealth : MonoBehaviour {
 	void Update()
 	{
 		currenthealth.text = phealth.ToString();
+
+		
+		if(uphealth)	
+		{
+			phealth = phealth + healthint;
+			
+			uphealth = false;
+			if(phealth>mainhealth)
+			{
+				phealth = mainhealth;
+			}
+		}
+
 	}
 
 	void OnGUI()
 
 	{
-		if(GUI.Button(new Rect(300,0,100,50),"Reset health"))
+		if(GUI.Button(new Rect(410,10,100,50),"Reset health"))
 		{
 			phealth = mainhealth;
 

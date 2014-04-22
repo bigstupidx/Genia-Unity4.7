@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour {
 	IEnumerator Countdown()
 	{
 
-		while(timercount<beattime+1){
+		while(timercount<beattime){
 		timercount = timercount+1;
 		yield return new WaitForSeconds(1f);
 		leveltimer.text = timercount.ToString();

@@ -19,26 +19,33 @@ public class pbullets : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update()
+	{
+		startbulletgen();
+	}
+	
+	void startbulletgen()
+		
+	{
 		StartCoroutine (Slower());
 	}
-
-	IEnumerator Slower(){
-
 	
+	IEnumerator Slower(){
+		
+		
 		if(pbulletactive && weaponlimit>0)
 		{
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(.3f);
 			chosenturret = Random.Range(0,turretpos.Length);
-
+			
 			Instantiate(playerbullets, turretpos[chosenturret].transform.position, turretpos[chosenturret].transform.rotation);
-			weaponlimit = weaponlimit-1;				
+			weaponlimit = weaponlimit-1;                
 		}
 		else{
 			pbulletactive = false;
 			weaponlimit = templimit;
 		}
-
+		
 	}
 }
 
