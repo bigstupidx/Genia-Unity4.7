@@ -23,6 +23,11 @@ public class Playerhealth : MonoBehaviour {
 		if(uphealth)	
 		{
 			phealth = phealth + healthint;
+
+			if(phealth>10)
+			{
+				transform.FindChild("playershield").gameObject.SetActive(true);
+			}
 			
 			uphealth = false;
 			if(phealth>mainhealth)
@@ -36,15 +41,15 @@ public class Playerhealth : MonoBehaviour {
 	void OnGUI()
 
 	{
-		if(GUI.Button(new Rect(410,10,100,50),"Reset health"))
-		{
-			phealth = mainhealth;
-
-			if(!transform.FindChild("playershield").gameObject.activeSelf)
-			{
-				transform.FindChild("playershield").gameObject.SetActive(true);
-			}
-		}
+//		if(GUI.Button(new Rect(410,10,100,50),"Reset health"))
+//		{
+//			phealth = mainhealth;
+//
+//			if(!transform.FindChild("playershield").gameObject.activeSelf)
+//			{
+//				transform.FindChild("playershield").gameObject.SetActive(true);
+//			}
+//		}
 		             
 	}
 
@@ -64,6 +69,8 @@ public class Playerhealth : MonoBehaviour {
 			
 			if(phealth ==0)
 			{
+				pbullets.pbulletactive =false;
+				EnemyAI.freezer = false;
 
 				Application.LoadLevel(Application.loadedLevel);
 			}

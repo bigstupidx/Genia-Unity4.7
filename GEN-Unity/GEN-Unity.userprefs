@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\allbutton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Playerhealth.cs">
     <Files>
-      <File FileName="Assets\Scripts\allbutton.cs" Line="35" Column="36" />
-      <File FileName="Assets\Scripts\Playerhealth.cs" Line="39" Column="28" />
+      <File FileName="Assets\Scripts\allbutton.cs" Line="27" Column="6" />
+      <File FileName="Assets\Scripts\Guiscrollers.cs" Line="18" Column="13" />
+      <File FileName="Assets\Scripts\Playerhealth.cs" Line="43" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

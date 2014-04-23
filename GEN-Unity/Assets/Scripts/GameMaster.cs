@@ -51,7 +51,7 @@ public class GameMaster : MonoBehaviour {
 			if(!rangen.activeSelf)
 			{
 				sucker.SetActive(false);
-				deadcount = 0;
+			//	deadcount = 0;
 				rangen.SetActive(true);    
 			}
 		}

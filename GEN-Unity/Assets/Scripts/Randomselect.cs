@@ -48,6 +48,8 @@ public class Randomselect : MonoBehaviour {
 				print ("freeze");
 				break;
 			case 3:
+
+			
 				Playerhealth.uphealth = true;
 				
 				print ("increase health");

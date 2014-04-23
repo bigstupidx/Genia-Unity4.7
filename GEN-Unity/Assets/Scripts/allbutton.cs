@@ -16,15 +16,15 @@ public class allbutton : MonoBehaviour {
 
 
 	void OnGUI () {
-
-		if(GUI.Button(new Rect (0,10,100,50), "Bullet active"))
-		{
-			pbullets.pbulletactive = true;
-		}
-		if(GUI.Button(new Rect (100,10,100,50), "Freeze active"))
-		{
-			EnemyAI.freezer = true;
-		}
+//
+//		if(GUI.Button(new Rect (0,10,100,50), "Bullet active"))
+//		{
+//			pbullets.pbulletactive = true;
+//		}
+//		if(GUI.Button(new Rect (100,10,100,50), "Freeze active"))
+//		{
+//			EnemyAI.freezer = true;
+//		}
 		if(GUI.Button(new Rect (200,10,100,50), "Restart Demo"))
 		{
 			pbullets.pbulletactive =false;
@@ -32,11 +32,11 @@ public class allbutton : MonoBehaviour {
 			Application.LoadLevel(Application.loadedLevel);
 		}
 
-		if(GUI.Button(new Rect (300,10,110,50), "Increase Health"))
-		{
-			Playerhealth.uphealth =true;
-
-		}
+//		if(GUI.Button(new Rect (300,10,110,50), "Increase Health"))
+//		{
+//			Playerhealth.uphealth =true;
+//
+//		}
 
 			if (GUI.Button (new Rect (100,Screen.height -200,150,150), "Suck them UP!")) {
 			if( !weaponchoice.activeSelf)
