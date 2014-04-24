@@ -34,6 +34,7 @@ public class Playercontrol : MonoBehaviour {
 //	}
 
 
+
 	// Use this for initialization
 	void Start () {
 		goup = false;

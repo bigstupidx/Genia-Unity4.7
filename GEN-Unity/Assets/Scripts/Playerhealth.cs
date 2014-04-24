@@ -4,7 +4,7 @@ using System.Collections;
 public class Playerhealth : MonoBehaviour {
 
 	public static int phealth;
-	public int mainhealth = 0;
+	public int mainhealth;
 	public GUIText currenthealth;
 	public int healthint =0;
 	public static bool uphealth = false;
