@@ -100,7 +100,7 @@ public class Playercontrol : MonoBehaviour {
 			goleft =false;
 		}
 
-		if(GUI.RepeatButton(new Rect(Screen.width-100,Screen.height -250,100,100),">"))
+		if(GUI.Box.RepeatButton(new Rect(Screen.width-100,Screen.height -250,100,100),">"))
 		{
 			goright =true;
 		//	print("godown is true");
@@ -108,6 +108,7 @@ public class Playercontrol : MonoBehaviour {
 		//	print("godown is false");
 			goright =false;
 		}
+		// save the rectangle to variables. touch input
 
 	}
 }
