@@ -18,6 +18,15 @@ public class EnemyHealth : MonoBehaviour {
 	
 	
 	}
+
+	void OnTriggerEnter(Collider wave)
+
+	{
+		if(wave.collider.name == "bigwave(Clone)")
+		{
+			health = health -3;
+		}
+	}
 	void OnCollisionEnter(Collision other)
 	{
 		if(other.collider.name == "Playerbody")
@@ -30,7 +39,7 @@ public class EnemyHealth : MonoBehaviour {
 			health = health -1;
 		}
 
-		if(health ==0 && EnemyAIscript.enabled)
+		if(health <=0 && EnemyAIscript.enabled)
 		{
 			GameMaster.respawncounter++;
 			DeadEnemyCounter.enemiesdead++;

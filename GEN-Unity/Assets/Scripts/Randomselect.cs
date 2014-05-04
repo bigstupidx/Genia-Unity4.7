@@ -40,6 +40,7 @@ public class Randomselect : MonoBehaviour {
 				pbullets.pbulletactive = true;
 				break;
 			case 1:
+				makebigger.makelarger = true;
 				print ("expand");
 				break;
 			case 2:
@@ -48,17 +49,18 @@ public class Randomselect : MonoBehaviour {
 				print ("freeze");
 				break;
 			case 3:
-
-			
 				Playerhealth.uphealth = true;
 				
 				print ("increase health");
 				break;
 			case 4:
+				Playercontrol.morespeed =true;
 				print ("speed");
 				break;
 			case 5:
-				print("waves");
+//
+//				Playercontrol.bigwave = true;
+		print("waves");
 				break;
 			}
 		StartCoroutine(Onesec());

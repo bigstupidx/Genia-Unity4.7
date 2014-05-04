@@ -4,42 +4,34 @@ using System.Collections;
 public class Playercontrol : MonoBehaviour {
 
 	public float playerspeed;
+	public float incspeed;
+	public static bool morespeed = false;
 	private bool goup;
 	private bool godown;
 	private bool goleft;
 	private bool goright;
 
-	private Vector3 playerscale;
-	//public vector3 largerscale;
-	public float scalesize;
-	public static bool makelarger = false;
-
+	//wave maker
+	public GameObject waveobj;
+	public static bool bigwave = false;
+	
 	private Rect goingup;
 	private Rect goingdown;
 	private Rect goingleft;
 	private Rect goingright;
 	private GUIStyle movementstyle;
-	
-	//make larger scale 15
-	
-//	void Update()
-//		
-//	{
-//		playerscale = transform.lossyscale;
-//		
-//		if(makelarger){
-//			
-//			transform.localScale(15,0,15);
-//		}    
-//		
-//		do{
-//			transform.localeScale(scalesize -.01f,0,scalesize - .01f);
-//		}
-//		
-//		while(transform.lossyscale != playerscale);
-//	}
 
+	private int waveamount = 0;
 
+void Makewaves()
+
+	{
+		if(waveamount == 1){
+			waveamount =0;
+			Instantiate(waveobj,transform.position,Quaternion.identity);
+			print (waveamount);
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -53,12 +45,39 @@ public class Playercontrol : MonoBehaviour {
 		goingleft = new Rect(Screen.width-300,Screen.height -250,100,100);
 		goingright = new Rect(Screen.width-100,Screen.height -250,100,100);
 
+	}
 
+	IEnumerator Powerdown()
+	{
+		yield return new WaitForSeconds(4f);
+		playerspeed = playerspeed -incspeed;
+	}
 
+	void Addspeed()
+
+	{
+			playerspeed = playerspeed + incspeed;
+			print (playerspeed);
+			morespeed = false;
+
+			StartCoroutine(Powerdown());
+ 
 	}
 
 	void Update()
 	{
+		if(morespeed)
+		{
+			Addspeed();
+		}
+
+		if(bigwave)
+		{
+			waveamount =1;
+			bigwave = false;
+			Makewaves();
+		}
+
 
 
 		for(int i =0; i<Input.touchCount;i++)

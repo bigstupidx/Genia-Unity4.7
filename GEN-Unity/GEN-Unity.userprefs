@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\Desktop\MainLD29\driller\Assets\Scripts\GUIMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\allbutton.cs">
     <Files>
-      <File FileName="..\..\..\..\Desktop\MainLD29\driller\Assets\Scripts\GUIMenu.cs" Line="52" Column="83" />
+      <File FileName="Assets\Scripts\allbutton.cs" Line="32" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

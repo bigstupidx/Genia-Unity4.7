@@ -29,12 +29,12 @@ public class allbutton : MonoBehaviour {
 		{
 			pbullets.pbulletactive =false;
 			EnemyAI.freezer = false;
-			Application.LoadLevel(Application.loadedLevel);
+			Application.LoadLevel("Demo");
 		}
 
-//		if(GUI.Button(new Rect (300,10,110,50), "Increase Health"))
+//		if(GUI.Button(new Rect (300,10,110,50), "More speed"))
 //		{
-//			Playerhealth.uphealth =true;
+//			Playercontrol.morespeed = true;
 //
 //		}
 
