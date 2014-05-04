@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyHealth : MonoBehaviour {
 
-	public int health =0;
+	public float health =0;
 	private EnemyAI EnemyAIscript;
 	public GameObject deadbouy;
 
@@ -24,7 +24,17 @@ public class EnemyHealth : MonoBehaviour {
 	{
 		if(wave.collider.name == "bigwave(Clone)")
 		{
-			health = health -3;
+			health = health / 2;
+		}
+
+		if(health <=0 && EnemyAIscript.enabled)
+		{
+			GameMaster.respawncounter++;
+			DeadEnemyCounter.enemiesdead++;
+			EnemyAIscript.enabled = !EnemyAIscript.enabled;
+			Instantiate(deadbouy,transform.position,transform.rotation);
+			rigidbody.freezeRotation = true;
+			Destroy(this.gameObject);
 		}
 	}
 	void OnCollisionEnter(Collision other)

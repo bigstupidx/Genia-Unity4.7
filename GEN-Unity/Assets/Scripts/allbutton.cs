@@ -32,11 +32,11 @@ public class allbutton : MonoBehaviour {
 			Application.LoadLevel("Demo");
 		}
 
-//		if(GUI.Button(new Rect (300,10,110,50), "More speed"))
-//		{
-//			Playercontrol.morespeed = true;
-//
-//		}
+		if(GUI.Button(new Rect (300,10,110,50), "Make Wave"))
+		{
+			Playercontrol.bigwave = true;
+
+		}
 
 			if (GUI.Button (new Rect (100,Screen.height -200,150,150), "Suck them UP!")) {
 			if( !weaponchoice.activeSelf)
