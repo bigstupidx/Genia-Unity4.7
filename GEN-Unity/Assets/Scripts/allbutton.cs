@@ -3,7 +3,6 @@ using System.Collections;
 
 public class allbutton : MonoBehaviour {
 	private GameObject weaponchoice;
-
 	private GameObject theplayer;
 
 
@@ -25,18 +24,18 @@ public class allbutton : MonoBehaviour {
 //		{
 //			EnemyAI.freezer = true;
 //		}
-		if(GUI.Button(new Rect (200,10,100,50), "Restart Demo"))
+		if(GUI.Button(new Rect (200,10,100,50), "Restart Level"))
 		{
 			pbullets.pbulletactive =false;
 			EnemyAI.freezer = false;
 			Application.LoadLevel("Demo");
 		}
 
-		if(GUI.Button(new Rect (300,10,110,50), "Make Wave"))
-		{
-			Playercontrol.bigwave = true;
-
-		}
+//		if(GUI.Button(new Rect (300,10,110,50), "Make Wave"))
+//		{
+//			Playercontrol.bigwave = true;
+//
+//		}
 
 			if (GUI.Button (new Rect (100,Screen.height -200,150,150), "Suck them UP!")) {
 			if( !weaponchoice.activeSelf)

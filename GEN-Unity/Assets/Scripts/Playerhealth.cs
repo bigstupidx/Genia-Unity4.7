@@ -8,10 +8,14 @@ public class Playerhealth : MonoBehaviour {
 	public GUIText currenthealth;
 	public int healthint =0;
 	public static bool uphealth = false;
+	public Material[] healthcircle;
+	public GameObject hcircle;
+
 
 	void Start()
 
 	{
+
 		phealth = mainhealth;
 	}
 

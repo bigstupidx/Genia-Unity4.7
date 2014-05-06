@@ -28,7 +28,7 @@ void Makewaves()
 	{
 		if(waveamount == 1){
 			waveamount =0;
-			Instantiate(waveobj,transform.position,Quaternion.identity);
+			Instantiate(waveobj,transform.position,transform.localRotation);
 			print (waveamount);
 		}
 	}

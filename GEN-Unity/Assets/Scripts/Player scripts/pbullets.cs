@@ -33,7 +33,7 @@ public class pbullets : MonoBehaviour {
 	IEnumerator Slower(){
 		
 		
-		if(pbulletactive && weaponlimit>0)
+		if(pbulletactive && weaponlimit>0 && Playerhealth.phealth!=0)
 		{
 			yield return new WaitForSeconds(.3f);
 			chosenturret = Random.Range(0,turretpos.Length);

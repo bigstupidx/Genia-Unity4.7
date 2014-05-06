@@ -58,9 +58,8 @@ public class Randomselect : MonoBehaviour {
 				print ("speed");
 				break;
 			case 5:
-//
-//				Playercontrol.bigwave = true;
-		print("waves");
+				Playercontrol.bigwave = true;
+				print("waves");
 				break;
 			}
 		StartCoroutine(Onesec());
