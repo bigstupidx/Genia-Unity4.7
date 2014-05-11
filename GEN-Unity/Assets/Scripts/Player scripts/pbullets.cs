@@ -14,8 +14,7 @@ public class pbullets : MonoBehaviour {
 	void Start () {
 		templimit = weaponlimit;
 		turretpos = GameObject.FindGameObjectsWithTag("turret2s");
-		print (chosenturret);
-		print (turretpos.Length);
+	
 	}
 	
 	// Update is called once per frame

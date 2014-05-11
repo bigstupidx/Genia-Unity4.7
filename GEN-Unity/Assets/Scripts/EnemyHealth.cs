@@ -6,10 +6,13 @@ public class EnemyHealth : MonoBehaviour {
 	public float health =0;
 	private EnemyAI EnemyAIscript;
 	public GameObject deadbouy;
-
+	private Vector3 deadbouylocation;
 
 	// Use this for initialization
 	void Start () {
+
+		deadbouylocation = new Vector3(0,-5,0);
+
 		EnemyAIscript = GetComponent<EnemyAI>();
 		}
 	

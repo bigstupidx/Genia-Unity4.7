@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Playercontrol : MonoBehaviour {
 
+	private float hor;
+	private float ver;
+
 	public float playerspeed;
 	public float incspeed;
 	public static bool morespeed = false;
@@ -21,20 +24,13 @@ public class Playercontrol : MonoBehaviour {
 	private Rect goingright;
 	private GUIStyle movementstyle;
 
-	private int waveamount = 0;
 
-void Makewaves()
-
-	{
-		if(waveamount == 1){
-			waveamount =0;
-			Instantiate(waveobj,transform.position,transform.localRotation);
-			print (waveamount);
-		}
-	}
 
 	// Use this for initialization
 	void Start () {
+
+	
+
 		goup = false;
 		godown = false;
 		goleft =false;
@@ -57,27 +53,29 @@ void Makewaves()
 
 	{
 			playerspeed = playerspeed + incspeed;
-			print (playerspeed);
+		//	print (playerspeed);
 			morespeed = false;
 
 			StartCoroutine(Powerdown());
- 
 	}
+
+
+public void wavemaker()
+	{	 
+		Instantiate(waveobj,transform.position,Quaternion.identity);
+	}
+	
 
 	void Update()
 	{
+
+		hor = Input.GetAxis("Horizontal");
+		ver = Input.GetAxis("Vertical");
+
 		if(morespeed)
 		{
 			Addspeed();
 		}
-
-		if(bigwave)
-		{
-			waveamount =1;
-			bigwave = false;
-			Makewaves();
-		}
-
 
 
 		for(int i =0; i<Input.touchCount;i++)
@@ -103,6 +101,10 @@ void Makewaves()
 
 	// Update is called once per frame
 	void FixedUpdate() {
+
+		//move with keyboard
+	Vector3 move  = new Vector3(hor*playerspeed,0f,ver*playerspeed);
+	rigidbody.AddForce(move,ForceMode.Acceleration);
 	
 		if(goup)
 		{
@@ -145,35 +147,6 @@ void Makewaves()
 
 		GUI.Box(goingright,">",movementstyle);
 	
-//	
-//		if(GUI.RepeatButton(new Rect(Screen.width-200,Screen.height -150,100,100),"v"))
-//		{
-//			godown =true;
-//		//	print("godown is true");
-//		}else{
-//		//	print("godown is false");
-//			godown =false;
-//		}
-//
-//		if(GUI.RepeatButton(new Rect(Screen.width-300,Screen.height -250,100,100),"<"))
-//		{
-//			goleft =true;
-//		//	print("godown is true");
-//		}else{
-//		//	print("godown is false");
-//			goleft =false;
-//		}
-//
-//		if(GUI.RepeatButton(new Rect(Screen.width-100,Screen.height -250,100,100),">"))
-//		{
-//			goright =true;
-//		//	print("godown is true");
-//		}else{
-//		//	print("godown is false");
-//			goright =false;
-//		}
-//		// save the rectangle to variables. touch input
-//
 
 	}
 }

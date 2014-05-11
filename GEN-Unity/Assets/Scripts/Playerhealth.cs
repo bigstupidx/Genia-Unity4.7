@@ -10,6 +10,8 @@ public class Playerhealth : MonoBehaviour {
 	public static bool uphealth = false;
 	public Material[] healthcircle;
 	public GameObject hcircle;
+	public GameObject sparks;
+	private int healthcounter =0;
 
 
 	void Start()
@@ -39,7 +41,7 @@ public class Playerhealth : MonoBehaviour {
 
 	void Update()
 	{
-		currenthealth.text = phealth.ToString();
+	//	currenthealth.text = phealth.ToString();
 
 		
 		if(uphealth)	
@@ -67,11 +69,38 @@ public class Playerhealth : MonoBehaviour {
 	void OnCollisionEnter(Collision pcollide)
 	{
 		
+		int ehitcounter =0;
+	 	ContactPoint ehit;
+		ehit = pcollide.contacts[ehitcounter];
+			
 		if(pcollide.collider.tag == "eattack")
 		{
-			//	print ("collision of bullet");
+
+			Instantiate (sparks,ehit.point,transform.rotation);
 			phealth = phealth-1;
 
+
+			healthcounter = Mathf.Abs(phealth/10);
+
+			//print (healthcounter);
+			switch (healthcounter)
+			{
+			case 4:
+				hcircle.transform.renderer.material = healthcircle[healthcounter];
+				break;
+			case 3:
+				hcircle.transform.renderer.material = healthcircle[healthcounter];
+				break;
+			case 2:
+				hcircle.transform.renderer.material = healthcircle[healthcounter];
+				break;
+			case 1:
+				hcircle.transform.renderer.material = healthcircle[healthcounter];
+				break;		
+			case 0:
+				hcircle.transform.renderer.material = healthcircle[healthcounter];
+				break;	
+			}
 
 			if(phealth ==10)
 			{

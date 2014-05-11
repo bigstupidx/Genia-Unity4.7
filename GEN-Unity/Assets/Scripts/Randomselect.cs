@@ -9,10 +9,11 @@ public class Randomselect : MonoBehaviour {
 	public int rancount = 0;
 	public int resetcount;
 	private Material chosenweapon;
- 
+	private Playercontrol waves;
 
 	// Use this for initialization
 	void Start () {
+		waves = GameObject.Find ("Playerbody").GetComponent<Playercontrol>();
 		resetcount =rancount;
 	}
 
@@ -36,30 +37,29 @@ public class Randomselect : MonoBehaviour {
 		switch (ranint)
 			{
 			case 0:
-				print ("bullets");
+		 
 				pbullets.pbulletactive = true;
 				break;
 			case 1:
+			 
 				makebigger.makelarger = true;
-				print ("expand");
 				break;
 			case 2:
+			 
 				EnemyAI.freezer = true;
-
-				print ("freeze");
 				break;
-			case 3:
+			case 3: 
+		 
 				Playerhealth.uphealth = true;
-				
-				print ("increase health");
 				break;
 			case 4:
+		 
 				Playercontrol.morespeed =true;
-				print ("speed");
 				break;
 			case 5:
-				Playercontrol.bigwave = true;
-				print("waves");
+
+			//	Playercontrol.bigwave = true;
+				waves.wavemaker();
 				break;
 			}
 		StartCoroutine(Onesec());

@@ -13,6 +13,7 @@ public class GameMaster : MonoBehaviour {
 	private GameObject[] respots;
 	private int respotsamount;
 	private int ranrespot;
+	public GUIText sucked;
 
 	// Use this for initialization
 	void Start () {
@@ -32,8 +33,14 @@ public class GameMaster : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		//exit android
+		if (Input.GetKeyDown(KeyCode.Escape)) 
+			Application.Quit();
+
 		Creator();
 	
+		sucked.text = deadcount.ToString();
+
 		if(deadcount == suckedup)
 		{
 			if(!rangen.activeSelf)
@@ -43,17 +50,16 @@ public class GameMaster : MonoBehaviour {
 				rangen.SetActive(true);    
 			}
 		}
-		else if(deadcount > suckedup)
-			
+
+		if(deadcount > suckedup)	
 		{
-			deadcount = deadcount - suckedup;
-			
 			if(!rangen.activeSelf)
 			{
 				sucker.SetActive(false);
-			//	deadcount = 0;
+				deadcount = deadcount - suckedup;
 				rangen.SetActive(true);    
 			}
+		
 		}
 	}
 
