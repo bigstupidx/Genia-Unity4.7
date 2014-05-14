@@ -14,6 +14,14 @@ public class GameMaster : MonoBehaviour {
 	private int respotsamount;
 	private int ranrespot;
 	public GUIText sucked;
+	private Rect pausebutton;
+
+
+
+	void OnGUI()
+	{
+		GUI.Label(new Rect(100, Screen.height/2, 100, 100),"");
+	}
 
 	// Use this for initialization
 	void Start () {

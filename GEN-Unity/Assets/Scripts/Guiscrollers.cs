@@ -7,7 +7,6 @@ public class Guiscrollers : MonoBehaviour {
 	public float speed1;
 	private float speed2rotation;
 	private float speed1rotation;
-	//public GameObject shield2;
 	private GameObject playercontroller;
 	public float speedinc;
 

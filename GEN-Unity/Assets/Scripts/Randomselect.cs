@@ -10,6 +10,8 @@ public class Randomselect : MonoBehaviour {
 	public int resetcount;
 	private Material chosenweapon;
 	private Playercontrol waves;
+	public Texture[] weaponTextures;
+	private Texture buttontexture;
 
 	// Use this for initialization
 	void Start () {
@@ -30,10 +32,13 @@ public class Randomselect : MonoBehaviour {
 			rancount = rancount -1;
 			ranint = Random.Range(0,ranweapon.Length);
 			renderer.material =ranweapon[ranint];
+	//		buttontexture = weaponTextures [Random.Range(0, weaponTextures.Length)];
 		}
 		if(rancount <=0){
 		chosenweapon = ranweapon[ranint];
 		renderer.material = chosenweapon;
+	//	buttontexture = weaponTextures [Random.Range(0, weaponTextures.Length)];
+
 		switch (ranint)
 			{
 			case 0:
@@ -58,14 +63,19 @@ public class Randomselect : MonoBehaviour {
 				break;
 			case 5:
 
-			//	Playercontrol.bigwave = true;
 				waves.wavemaker();
 				break;
 			}
 		StartCoroutine(Onesec());
 		
 		}
+	}
 
+
+
+	private void OnGUI()
+	{
+		GUI.Label(new Rect(0, 300, 100, 100), buttontexture);
 	}
 
 	IEnumerator Onesec()
