@@ -8,6 +8,7 @@ public class Playercontrol : MonoBehaviour {
 
 	public float playerspeed;
 	public float incspeed;
+	private float tempspeed;
 	public static bool morespeed = false;
 	private bool goup;
 	private bool godown;
@@ -29,7 +30,7 @@ public class Playercontrol : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-	
+		tempspeed = playerspeed;
 
 		goup = false;
 		godown = false;
@@ -45,14 +46,15 @@ public class Playercontrol : MonoBehaviour {
 
 	IEnumerator Powerdown()
 	{
-		yield return new WaitForSeconds(4f);
-		playerspeed = playerspeed -incspeed;
+		yield return new WaitForSeconds(5f);
+		playerspeed = tempspeed;
 	}
 
 	void Addspeed()
 
 	{
-			playerspeed = playerspeed + incspeed;
+			
+			playerspeed = incspeed;
 		//	print (playerspeed);
 			morespeed = false;
 

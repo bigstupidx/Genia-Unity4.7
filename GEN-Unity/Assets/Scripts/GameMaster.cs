@@ -18,10 +18,10 @@ public class GameMaster : MonoBehaviour {
 
 
 
-	void OnGUI()
-	{
-		GUI.Label(new Rect(100, Screen.height/2, 100, 100),"");
-	}
+//	void OnGUI()
+//	{
+//		GUI.Label(new Rect(100, Screen.height/2, 100, 100),"Test");
+//	}
 
 	// Use this for initialization
 	void Start () {
@@ -51,22 +51,22 @@ public class GameMaster : MonoBehaviour {
 
 		if(deadcount == suckedup)
 		{
-			if(!rangen.activeSelf)
-			{
+		//	if(!rangen.activeSelf)
+		//	{
 				sucker.SetActive(false);
 				deadcount = 0;
 				rangen.SetActive(true);    
-			}
+		//	}
 		}
 
 		if(deadcount > suckedup)	
 		{
-			if(!rangen.activeSelf)
-			{
+		//	if(!rangen.activeSelf)
+		//	{
 				sucker.SetActive(false);
 				deadcount = deadcount - suckedup;
 				rangen.SetActive(true);    
-			}
+		//	}
 		
 		}
 	}

@@ -10,8 +10,13 @@ public class Randomselect : MonoBehaviour {
 	public int resetcount;
 	private Material chosenweapon;
 	private Playercontrol waves;
+
+	//new variables for change in code
 	public Texture[] weaponTextures;
 	private Texture buttontexture;
+	private bool chosenability;
+	public Material blankmat;
+
 
 	// Use this for initialization
 	void Start () {
@@ -71,17 +76,20 @@ public class Randomselect : MonoBehaviour {
 		}
 	}
 
-
-
-	private void OnGUI()
+	
+	 void OnGUI()
 	{
-		GUI.Label(new Rect(0, 300, 100, 100), buttontexture);
+		chosenability = GUI.Button(new Rect(100, Screen.height/2, 100, 100), "button");
 	}
 
 	IEnumerator Onesec()
 	{
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(5f);
+		renderer.material = blankmat;
+		yield return new WaitForSeconds(1f);
 		rancount = resetcount;
-		gameObject.SetActive(false);
+	
+		//will make the script deactivate
+		//	gameObject.SetActive(false);
 	}
 }
