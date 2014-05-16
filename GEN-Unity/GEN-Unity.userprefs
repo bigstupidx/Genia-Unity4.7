@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameMaster.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Randomselect.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameMaster.cs" Line="14" Column="28" />
-      <File FileName="Assets\Scripts\Playercontrol.cs" Line="35" Column="16" />
+      <File FileName="Assets\Scripts\Randomselect.cs" Line="86" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

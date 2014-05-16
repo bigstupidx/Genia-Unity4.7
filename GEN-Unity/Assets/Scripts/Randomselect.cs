@@ -42,44 +42,78 @@ public class Randomselect : MonoBehaviour {
 		if(rancount <=0){
 		chosenweapon = ranweapon[ranint];
 		renderer.material = chosenweapon;
-	//	buttontexture = weaponTextures [Random.Range(0, weaponTextures.Length)];
-
-		switch (ranint)
-			{
-			case 0:
-		 
-				pbullets.pbulletactive = true;
-				break;
-			case 1:
-			 
-				makebigger.makelarger = true;
-				break;
-			case 2:
-			 
-				EnemyAI.freezer = true;
-				break;
-			case 3: 
-		 
-				Playerhealth.uphealth = true;
-				break;
-			case 4:
-		 
-				Playercontrol.morespeed =true;
-				break;
-			case 5:
-
-				waves.wavemaker();
-				break;
-			}
-		StartCoroutine(Onesec());
-		
+		buttontexture = weaponTextures [ranint];
+//
+//		switch (ranint)
+//			{
+//			case 0:
+//		 
+//				pbullets.pbulletactive = true;
+//				break;
+//			case 1:
+//			 
+//				makebigger.makelarger = true;
+//				break;
+//			case 2:
+//			 
+//				EnemyAI.freezer = true;
+//				break;
+//			case 3: 
+//		 
+//				Playerhealth.uphealth = true;
+//				break;
+//			case 4:
+//		 
+//				Playercontrol.morespeed =true;
+//				break;
+//			case 5:
+//
+//				waves.wavemaker();
+//				break;
+//			}
+//		StartCoroutine(Onesec());
+//		
 		}
 	}
 
 	
 	 void OnGUI()
 	{
-		chosenability = GUI.Button(new Rect(100, Screen.height/2, 100, 100), "button");
+		chosenability = GUI.Button(new Rect(100, Screen.height/2, 100, 100), buttontexture);
+
+		if(chosenability)
+		{
+						
+			switch (ranint)
+			{
+			case 0:
+				
+				pbullets.pbulletactive = true;
+				break;
+			case 1:
+				
+				makebigger.makelarger = true;
+				break;
+			case 2:
+				
+				EnemyAI.freezer = true;
+				break;
+			case 3: 
+				
+				Playerhealth.uphealth = true;
+				break;
+			case 4:
+				
+				Playercontrol.morespeed =true;
+				break;
+			case 5:
+				
+				waves.wavemaker();
+				break;
+			}
+			StartCoroutine(Onesec());
+
+		}
 	}
 
 	IEnumerator Onesec()
