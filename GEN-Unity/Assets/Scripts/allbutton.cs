@@ -6,7 +6,8 @@ public class allbutton : MonoBehaviour {
 	private GameObject theplayer;
 	private Rect sucker;
 	private bool startsucker = false;
-	private GUIStyle suckup;
+	public GUIStyle suckup;
+	public Texture suckertext;
 
 
 	// Use this for initialization
@@ -72,7 +73,7 @@ public class allbutton : MonoBehaviour {
 			suckup = new GUIStyle("button");
 		}
 
-		GUI.Box(sucker,"Suck them UP!",suckup);
+		GUI.Box(sucker,"",suckup);
 
 	}
 }

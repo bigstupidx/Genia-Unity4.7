@@ -16,6 +16,9 @@ public class Randomselect : MonoBehaviour {
 	private Texture buttontexture;
 	private bool chosenability;
 	public Material blankmat;
+	private Texture blanktext;
+	public static bool buttonchanger =false;
+	public static bool startran=false;
 
 
 	// Use this for initialization
@@ -31,18 +34,20 @@ public class Randomselect : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if(startran){
+	
 		if(rancount >0)
 		{
 			rancount = rancount -1;
 			ranint = Random.Range(0,ranweapon.Length);
 			renderer.material =ranweapon[ranint];
-	//		buttontexture = weaponTextures [Random.Range(0, weaponTextures.Length)];
+	 
 		}
 		if(rancount <=0){
 		chosenweapon = ranweapon[ranint];
 		renderer.material = chosenweapon;
 		buttontexture = weaponTextures [ranint];
+		buttonchanger = true;
 //
 //		switch (ranint)
 //			{
@@ -74,12 +79,16 @@ public class Randomselect : MonoBehaviour {
 //		StartCoroutine(Onesec());
 //		
 		}
+		}
 	}
 
 	
 	 void OnGUI()
 	{
+		if(buttonchanger){
 		chosenability = GUI.Button(new Rect(100, Screen.height/2, 100, 100), buttontexture);
+		}
+
 
 		if(chosenability)
 		{
@@ -89,41 +98,79 @@ public class Randomselect : MonoBehaviour {
 			case 0:
 				
 				pbullets.pbulletactive = true;
+
+				renderer.material = blankmat;
+				buttontexture = blanktext;
+				buttonchanger = false;
+				if(GameMaster.deadcount>0){
+				startran = true;
+				}
+				rancount = resetcount;
 				break;
 			case 1:
 				
 				makebigger.makelarger = true;
+
+				renderer.material = blankmat;
+				buttontexture = blanktext;
+				buttonchanger = false;
+				if(GameMaster.deadcount>0){
+					startran = true;
+				}
+				rancount = resetcount;
 				break;
 			case 2:
 				
 				EnemyAI.freezer = true;
+
+				renderer.material = blankmat;
+				buttontexture = blanktext;
+				buttonchanger = false;
+				if(GameMaster.deadcount>0){
+					startran = true;
+				}
+				rancount = resetcount;
 				break;
 			case 3: 
 				
 				Playerhealth.uphealth = true;
+
+				renderer.material = blankmat;
+				buttontexture = blanktext;
+				buttonchanger = false;
+				if(GameMaster.deadcount>0){
+					startran = true;
+				}
+				rancount = resetcount;
 				break;
 			case 4:
 				
 				Playercontrol.morespeed =true;
+
+				renderer.material = blankmat;
+				buttontexture = blanktext;
+				buttonchanger = false;
+				if(GameMaster.deadcount>0){
+					startran = true;
+				}
+				rancount = resetcount;
 				break;
 			case 5:
 				
 				waves.wavemaker();
+
+				renderer.material = blankmat;
+				buttontexture = blanktext;
+				buttonchanger = false;
+				if(GameMaster.deadcount>0){
+					startran = true;
+				}
+				rancount = resetcount;
 				break;
 			}
-			StartCoroutine(Onesec());
+	
 
 		}
 	}
-
-	IEnumerator Onesec()
-	{
-		yield return new WaitForSeconds(5f);
-		renderer.material = blankmat;
-		yield return new WaitForSeconds(1f);
-		rancount = resetcount;
 	
-		//will make the script deactivate
-		//	gameObject.SetActive(false);
-	}
 }

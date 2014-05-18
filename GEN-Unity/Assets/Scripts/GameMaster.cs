@@ -53,6 +53,8 @@ public class GameMaster : MonoBehaviour {
 		{
 		//	if(!rangen.activeSelf)
 		//	{
+			Randomselect.startran = true;
+		//	Randomselect.buttonchanger =true;
 				sucker.SetActive(false);
 				deadcount = 0;
 				rangen.SetActive(true);    
@@ -63,6 +65,8 @@ public class GameMaster : MonoBehaviour {
 		{
 		//	if(!rangen.activeSelf)
 		//	{
+			Randomselect.startran = true;
+	//		Randomselect.buttonchanger =true;
 				sucker.SetActive(false);
 				deadcount = deadcount - suckedup;
 				rangen.SetActive(true);    

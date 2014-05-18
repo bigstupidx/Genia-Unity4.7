@@ -20,7 +20,7 @@ public class pbullets : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
-		startbulletgen();
+		//startbulletgen();
 	}
 	
 	void startbulletgen()
@@ -34,11 +34,14 @@ public class pbullets : MonoBehaviour {
 		
 		if(pbulletactive && weaponlimit>0 && Playerhealth.phealth!=0)
 		{
+			for(int i = 0; i<=weaponlimit;i++){
 			yield return new WaitForSeconds(.3f);
 			chosenturret = Random.Range(0,turretpos.Length);
 			
 			Instantiate(playerbullets, turretpos[chosenturret].transform.position, turretpos[chosenturret].transform.rotation);
-			weaponlimit = weaponlimit-1;                
+			weaponlimit = weaponlimit-1;    
+				print ("bullet");
+			}
 		}
 		else{
 			pbulletactive = false;
