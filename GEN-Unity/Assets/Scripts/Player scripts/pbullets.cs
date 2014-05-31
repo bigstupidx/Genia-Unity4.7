@@ -35,7 +35,7 @@ public class pbullets : MonoBehaviour {
 		if(pbulletactive && weaponlimit>0 && Playerhealth.phealth!=0)
 		{
 			for(int i = 0; i<=weaponlimit;i++){
-			yield return new WaitForSeconds(.3f);
+			yield return new WaitForSeconds(.1f);
 			chosenturret = Random.Range(0,turretpos.Length);
 			
 			Instantiate(playerbullets, turretpos[chosenturret].transform.position, turretpos[chosenturret].transform.rotation);

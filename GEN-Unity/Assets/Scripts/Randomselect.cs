@@ -8,6 +8,7 @@ public class Randomselect : MonoBehaviour {
 	private int ranint;
 	public int rancount = 0;
 	public int resetcount;
+	private int chosenint =0;
 	private Material chosenweapon;
 	private Playercontrol waves;
 
@@ -48,6 +49,8 @@ public class Randomselect : MonoBehaviour {
 		renderer.material = chosenweapon;
 		buttontexture = weaponTextures [ranint];
 		buttonchanger = true;
+		chosenint = ranint;
+		renderer.material = blankmat;
 //
 //		switch (ranint)
 //			{
@@ -92,8 +95,7 @@ public class Randomselect : MonoBehaviour {
 
 		if(chosenability)
 		{
-						
-			switch (ranint)
+			switch (chosenint)
 			{
 			case 0:
 				
@@ -102,10 +104,14 @@ public class Randomselect : MonoBehaviour {
 				renderer.material = blankmat;
 				buttontexture = blanktext;
 				buttonchanger = false;
-				if(GameMaster.deadcount>0){
+				if(GameMaster.deadcount>=3){
 				startran = true;
-				}
 				rancount = resetcount;
+				}
+				else if(GameMaster.deadcount==0){
+					startran = false;
+				}
+
 				break;
 			case 1:
 				
@@ -114,10 +120,14 @@ public class Randomselect : MonoBehaviour {
 				renderer.material = blankmat;
 				buttontexture = blanktext;
 				buttonchanger = false;
-				if(GameMaster.deadcount>0){
+				if(GameMaster.deadcount>=3){
 					startran = true;
+					rancount = resetcount;
 				}
-				rancount = resetcount;
+				else if(GameMaster.deadcount==0){
+					startran = false;
+				}
+		
 				break;
 			case 2:
 				
@@ -126,10 +136,14 @@ public class Randomselect : MonoBehaviour {
 				renderer.material = blankmat;
 				buttontexture = blanktext;
 				buttonchanger = false;
-				if(GameMaster.deadcount>0){
+				if(GameMaster.deadcount>=3){
 					startran = true;
+					rancount = resetcount;
 				}
-				rancount = resetcount;
+				else if(GameMaster.deadcount==0){
+					startran = false;
+				}
+			
 				break;
 			case 3: 
 				
@@ -138,10 +152,14 @@ public class Randomselect : MonoBehaviour {
 				renderer.material = blankmat;
 				buttontexture = blanktext;
 				buttonchanger = false;
-				if(GameMaster.deadcount>0){
+				if(GameMaster.deadcount>=3){
 					startran = true;
+					rancount = resetcount;
 				}
-				rancount = resetcount;
+				else if(GameMaster.deadcount==0){
+					startran = false;
+				}
+		
 				break;
 			case 4:
 				
@@ -150,10 +168,14 @@ public class Randomselect : MonoBehaviour {
 				renderer.material = blankmat;
 				buttontexture = blanktext;
 				buttonchanger = false;
-				if(GameMaster.deadcount>0){
+				if(GameMaster.deadcount>=3){
 					startran = true;
+					rancount = resetcount;
 				}
-				rancount = resetcount;
+				else if(GameMaster.deadcount==0){
+					startran = false;
+				}
+		
 				break;
 			case 5:
 				
@@ -162,14 +184,17 @@ public class Randomselect : MonoBehaviour {
 				renderer.material = blankmat;
 				buttontexture = blanktext;
 				buttonchanger = false;
-				if(GameMaster.deadcount>0){
+				if(GameMaster.deadcount>=3){
 					startran = true;
+					rancount = resetcount;
 				}
-				rancount = resetcount;
+				else if(GameMaster.deadcount==0){
+					startran = false;
+				}
+		
 				break;
 			}
 	
-
 		}
 	}
 	

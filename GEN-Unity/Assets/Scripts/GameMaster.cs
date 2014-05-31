@@ -15,6 +15,7 @@ public class GameMaster : MonoBehaviour {
 	private int ranrespot;
 	public GUIText sucked;
 	private Rect pausebutton;
+	private bool firstime = true;
 
 
 
@@ -49,6 +50,8 @@ public class GameMaster : MonoBehaviour {
 	
 		sucked.text = deadcount.ToString();
 
+		print (deadcount);
+
 		if(deadcount == suckedup)
 		{
 		//	if(!rangen.activeSelf)
@@ -57,7 +60,11 @@ public class GameMaster : MonoBehaviour {
 		//	Randomselect.buttonchanger =true;
 				sucker.SetActive(false);
 				deadcount = 0;
+			if(firstime)
+			{
 				rangen.SetActive(true);    
+				firstime = false;
+			}
 		//	}
 		}
 
@@ -69,7 +76,11 @@ public class GameMaster : MonoBehaviour {
 	//		Randomselect.buttonchanger =true;
 				sucker.SetActive(false);
 				deadcount = deadcount - suckedup;
+			if(firstime)
+			{
 				rangen.SetActive(true);    
+				firstime = false;
+			}   
 		//	}
 		
 		}
