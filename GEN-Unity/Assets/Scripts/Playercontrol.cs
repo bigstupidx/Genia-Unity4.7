@@ -64,12 +64,16 @@ public class Playercontrol : MonoBehaviour {
 
 public void wavemaker()
 	{	 
+		if(bigwave){
 		Instantiate(waveobj,transform.position,Quaternion.identity);
+		bigwave = false;
+		}
 	}
 	
 
 	void Update()
 	{
+	
 
 		hor = Input.GetAxis("Horizontal");
 		ver = Input.GetAxis("Vertical");

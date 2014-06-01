@@ -6,8 +6,8 @@ public class Randomselect : MonoBehaviour {
 	public Material[] ranweapon;
 	public int weaponamount =0;
 	private int ranint;
-	public int rancount = 0;
-	public int resetcount;
+	public static int rancount = 0;
+
 	private int chosenint =0;
 	private Material chosenweapon;
 	private Playercontrol waves;
@@ -17,7 +17,7 @@ public class Randomselect : MonoBehaviour {
 	private Texture buttontexture;
 	private bool chosenability;
 	public Material blankmat;
-	private Texture blanktext;
+	public Texture blanktext;
 	public static bool buttonchanger =false;
 	public static bool startran=false;
 
@@ -25,7 +25,6 @@ public class Randomselect : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		waves = GameObject.Find ("Playerbody").GetComponent<Playercontrol>();
-		resetcount =rancount;
 	}
 
 	void OnEnable(){
@@ -42,45 +41,16 @@ public class Randomselect : MonoBehaviour {
 			rancount = rancount -1;
 			ranint = Random.Range(0,ranweapon.Length);
 			renderer.material =ranweapon[ranint];
-	 
+				buttontexture = blanktext;
 		}
-		if(rancount <=0){
+		if(rancount<=0){
 		chosenweapon = ranweapon[ranint];
 		renderer.material = chosenweapon;
 		buttontexture = weaponTextures [ranint];
-		buttonchanger = true;
+  
 		chosenint = ranint;
 		renderer.material = blankmat;
-//
-//		switch (ranint)
-//			{
-//			case 0:
-//		 
-//				pbullets.pbulletactive = true;
-//				break;
-//			case 1:
-//			 
-//				makebigger.makelarger = true;
-//				break;
-//			case 2:
-//			 
-//				EnemyAI.freezer = true;
-//				break;
-//			case 3: 
-//		 
-//				Playerhealth.uphealth = true;
-//				break;
-//			case 4:
-//		 
-//				Playercontrol.morespeed =true;
-//				break;
-//			case 5:
-//
-//				waves.wavemaker();
-//				break;
-//			}
-//		StartCoroutine(Onesec());
-//		
+ 
 		}
 		}
 	}
@@ -100,102 +70,76 @@ public class Randomselect : MonoBehaviour {
 			case 0:
 				
 				pbullets.pbulletactive = true;
-
+				pbullets.instance.startbulletgen();
 				renderer.material = blankmat;
 				buttontexture = blanktext;
 				buttonchanger = false;
-				if(GameMaster.deadcount>=3){
-				startran = true;
-				rancount = resetcount;
-				}
-				else if(GameMaster.deadcount==0){
-					startran = false;
-				}
-
+				chosenint = 6;
+				StartCoroutine(Needtime());
+				print ("bullet");	
 				break;
 			case 1:
 				
 				makebigger.makelarger = true;
-
+				chosenability = false;
 				renderer.material = blankmat;
 				buttontexture = blanktext;
 				buttonchanger = false;
-				if(GameMaster.deadcount>=3){
-					startran = true;
-					rancount = resetcount;
-				}
-				else if(GameMaster.deadcount==0){
-					startran = false;
-				}
-		
+				chosenint = 6;
+				print ("make larger");
 				break;
 			case 2:
 				
 				EnemyAI.freezer = true;
-
+				chosenability = false;
 				renderer.material = blankmat;
 				buttontexture = blanktext;
 				buttonchanger = false;
-				if(GameMaster.deadcount>=3){
-					startran = true;
-					rancount = resetcount;
-				}
-				else if(GameMaster.deadcount==0){
-					startran = false;
-				}
-			
+				chosenint = 6;
+				print ("freezer");
 				break;
 			case 3: 
 				
 				Playerhealth.uphealth = true;
-
+				chosenability = false;
 				renderer.material = blankmat;
 				buttontexture = blanktext;
 				buttonchanger = false;
-				if(GameMaster.deadcount>=3){
-					startran = true;
-					rancount = resetcount;
-				}
-				else if(GameMaster.deadcount==0){
-					startran = false;
-				}
+				chosenint = 6;
+				print (" uphealth");
 		
 				break;
 			case 4:
 				
 				Playercontrol.morespeed =true;
-
+				chosenability = false;
 				renderer.material = blankmat;
 				buttontexture = blanktext;
 				buttonchanger = false;
-				if(GameMaster.deadcount>=3){
-					startran = true;
-					rancount = resetcount;
-				}
-				else if(GameMaster.deadcount==0){
-					startran = false;
-				}
+				chosenint = 6;
+				print ("more speed");
 		
 				break;
 			case 5:
 				
+				Playercontrol.bigwave = true;
 				waves.wavemaker();
-
+				 
 				renderer.material = blankmat;
 				buttontexture = blanktext;
 				buttonchanger = false;
-				if(GameMaster.deadcount>=3){
-					startran = true;
-					rancount = resetcount;
-				}
-				else if(GameMaster.deadcount==0){
-					startran = false;
-				}
-		
+				chosenint = 6;
+				chosenability = false;
+				print (" make waves");
 				break;
 			}
 	
 		}
 	}
-	
+
+	IEnumerator Needtime()
+	{
+		yield return new WaitForSeconds (3f);
+		chosenability =false;
+	}
 }

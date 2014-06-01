@@ -16,6 +16,7 @@ public class GameMaster : MonoBehaviour {
 	public GUIText sucked;
 	private Rect pausebutton;
 	private bool firstime = true;
+	public int resetcount;
 
 
 
@@ -50,14 +51,15 @@ public class GameMaster : MonoBehaviour {
 	
 		sucked.text = deadcount.ToString();
 
-		print (deadcount);
+	//	print (deadcount);
 
 		if(deadcount == suckedup)
 		{
+			Randomselect.rancount = resetcount;
 		//	if(!rangen.activeSelf)
 		//	{
 			Randomselect.startran = true;
-		//	Randomselect.buttonchanger =true;
+			Randomselect.buttonchanger =true;
 				sucker.SetActive(false);
 				deadcount = 0;
 			if(firstime)
@@ -70,10 +72,11 @@ public class GameMaster : MonoBehaviour {
 
 		if(deadcount > suckedup)	
 		{
+			Randomselect.rancount = resetcount;
 		//	if(!rangen.activeSelf)
 		//	{
 			Randomselect.startran = true;
-	//		Randomselect.buttonchanger =true;
+			Randomselect.buttonchanger =true;
 				sucker.SetActive(false);
 				deadcount = deadcount - suckedup;
 			if(firstime)
