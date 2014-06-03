@@ -36,13 +36,15 @@ public class Playercontrol : MonoBehaviour {
 		godown = false;
 		goleft =false;
 		goright =false;
-
-		goingup = new Rect(Screen.width-200,Screen.height -350,100,100);
-		goingdown = new Rect(Screen.width-200,Screen.height -150,100,100);
-		goingleft = new Rect(Screen.width-300,Screen.height -250,100,100);
-		goingright = new Rect(Screen.width-100,Screen.height -250,100,100);
+//
+//		goingup = new Rect(Screen.width-200,Screen.height -350,100,100);
+//		goingdown = new Rect(Screen.width-200,Screen.height -150,100,100);
+//		goingleft = new Rect(Screen.width-300,Screen.height -250,100,100);
+//		goingright = new Rect(Screen.width-100,Screen.height -250,100,100);
 
 	}
+
+
 
 	IEnumerator Powerdown()
 	{
@@ -69,7 +71,52 @@ public void wavemaker()
 		bigwave = false;
 		}
 	}
+
+	public void Playerup()
+
+	{
+		goup = true;
+	}
+
+	public void Playerupfalse()
+		
+	{
+		goup = false;
+	}
+
+	public void Playerdown()
+		
+	{
+		godown = true;
 	
+	}
+	public void Playerdownfalse()
+		
+	{
+		godown = false;
+	
+	}
+
+	public void Playerleft()
+		
+	{
+		goleft = true;
+	}
+	public void Playerleftfalse()
+		
+	{
+		goleft = false;
+	}
+	public void Playerright()
+		
+	{
+		goright = true;
+	}
+	public void Playerrightfalse()
+		
+	{
+		goright = false;
+	}
 
 	void Update()
 	{
@@ -84,23 +131,23 @@ public void wavemaker()
 		}
 
 
-		for(int i =0; i<Input.touchCount;i++)
-		{
-			goup = goingup.Contains(Input.touches[i].position);
-			godown = goingdown.Contains(Input.touches[i].position);
-			goleft = goingleft.Contains(Input.touches[i].position);
-			goright = goingright.Contains(Input.touches[i].position);
-		}
-		if(Input.GetMouseButton(0))
-
-		{
-			Vector2 mousePosition = Input.mousePosition;
-			mousePosition.y = Screen.height - mousePosition.y;
-			goup = goingup.Contains(mousePosition);
-			godown = goingdown.Contains(mousePosition);
-			goleft = goingleft.Contains(mousePosition);
-			goright = goingright.Contains(mousePosition);
-		}
+//		for(int i =0; i<Input.touchCount;i++)
+//		{
+//			goup = goingup.Contains(Input.touches[i].position);
+//			godown = goingdown.Contains(Input.touches[i].position);
+//			goleft = goingleft.Contains(Input.touches[i].position);
+//			goright = goingright.Contains(Input.touches[i].position);
+//		}
+//		if(Input.GetMouseButton(0))
+//
+//		{
+//			Vector2 mousePosition = Input.mousePosition;
+//			mousePosition.y = Screen.height - mousePosition.y;
+//			goup = goingup.Contains(mousePosition);
+//			godown = goingdown.Contains(mousePosition);
+//			goleft = goingleft.Contains(mousePosition);
+//			goright = goingright.Contains(mousePosition);
+//		}
 
 
 	}
@@ -115,15 +162,15 @@ public void wavemaker()
 		if(goup)
 		{
 			this.rigidbody.AddForce(Vector3.forward * playerspeed,ForceMode.Acceleration);
-		//	transform.Translate(0,0,playerspeed*Time.deltaTime);
+	 
 		}
 			
 
 		if(godown)
 		{
-		//	rigidbody.velocity  = Vector3.back *playerspeed;
+	 
 			this.rigidbody.AddForce(Vector3.back * playerspeed,ForceMode.Acceleration);
-			//transform.Translate(0,0,-1*playerspeed*Time.deltaTime);
+	 
 		}
 
 		if(goleft)
@@ -139,20 +186,20 @@ public void wavemaker()
 
 	void OnGUI()
 	{
-		if(movementstyle ==null)
-		{
-			movementstyle = new GUIStyle("button");
-		}
-
-
-		GUI.Box(goingup,"^",movementstyle);
-
-		GUI.Box(goingdown,"v",movementstyle);
-
-		GUI.Box(goingleft,"<",movementstyle);
-
-		GUI.Box(goingright,">",movementstyle);
-	
+//		if(movementstyle ==null)
+//		{
+//			movementstyle = new GUIStyle("button");
+//		}
+//
+//
+//		GUI.Box(goingup,"^",movementstyle);
+//
+//		GUI.Box(goingdown,"v",movementstyle);
+//
+//		GUI.Box(goingleft,"<",movementstyle);
+//
+//		GUI.Box(goingright,">",movementstyle);
+//	
 
 	}
 }

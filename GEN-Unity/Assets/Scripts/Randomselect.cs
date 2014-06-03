@@ -47,10 +47,9 @@ public class Randomselect : MonoBehaviour {
 		chosenweapon = ranweapon[ranint];
 		renderer.material = chosenweapon;
 		buttontexture = weaponTextures [ranint];
-  
 		chosenint = ranint;
 		renderer.material = blankmat;
- 
+		Randomselect.buttonchanger =true;
 		}
 		}
 	}
@@ -101,7 +100,7 @@ public class Randomselect : MonoBehaviour {
 			case 3: 
 				
 				Playerhealth.uphealth = true;
-				chosenability = false;
+				StartCoroutine(Needtime());
 				renderer.material = blankmat;
 				buttontexture = blanktext;
 				buttonchanger = false;

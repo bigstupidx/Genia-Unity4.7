@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Timer : MonoBehaviour {
 
-	public GUIText leveltimer;
+	public UILabel leveltimer;
 	private float timercount = 0;
 	public float beattime = 0;
 
