@@ -63,12 +63,12 @@ public class allbutton : MonoBehaviour {
 ////		{
 ////			EnemyAI.freezer = true;
 ////		}
-		if(GUI.Button(new Rect (200,10,100,50), "Restart Level"))
-		{
-			pbullets.pbulletactive =false;
-			EnemyAI.freezer = false;
-			Application.LoadLevel("Demo");
-		}
+//		if(GUI.Button(new Rect (200,10,100,50), "Restart Level"))
+//		{
+//			pbullets.pbulletactive =false;
+//			EnemyAI.freezer = false;
+//			Application.LoadLevel("Demo");
+//		}
 //
 ////		if(GUI.Button(new Rect (300,10,110,50), "Make Wave"))
 ////		{

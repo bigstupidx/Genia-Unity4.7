@@ -51,32 +51,30 @@ public class GameMaster : MonoBehaviour {
 	
 		sucked.text = deadcount.ToString();
 
-	//	print (deadcount);
+	 
 
 		if(deadcount == suckedup)
 		{
 			Randomselect.rancount = resetcount;
-		//	if(!rangen.activeSelf)
-		//	{
+		//	Randomselect.instant1.randomgo();
 			Randomselect.startran = true;
-		//	Randomselect.buttonchanger =true;
-				sucker.SetActive(false);
-				deadcount = 0;
+		 
+			sucker.SetActive(false);
+			deadcount = 0;
 			if(firstime)
 			{
 				rangen.SetActive(true);    
 				firstime = false;
 			}
-		//	}
+ 
 		}
 
 		if(deadcount > suckedup)	
 		{
 			Randomselect.rancount = resetcount;
-		//	if(!rangen.activeSelf)
-		//	{
+	 
 			Randomselect.startran = true;
-		//	Randomselect.buttonchanger =true;
+			Randomselect.buttonchanger =true;
 				sucker.SetActive(false);
 				deadcount = deadcount - suckedup;
 			if(firstime)
@@ -84,7 +82,7 @@ public class GameMaster : MonoBehaviour {
 				rangen.SetActive(true);    
 				firstime = false;
 			}   
-		//	}
+	 
 		
 		}
 	}

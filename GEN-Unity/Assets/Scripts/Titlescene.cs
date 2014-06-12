@@ -8,6 +8,7 @@ public class Titlescene : MonoBehaviour {
 	public Texture arrowtext;
 	private bool goarrow;
 	private GUIStyle inputstyle;
+	public UIPanel helper;
 
 
 
@@ -45,7 +46,7 @@ public class Titlescene : MonoBehaviour {
 
 	public void helppanel()
 	{
-
+		helper.gameObject.SetActive(true);
 	}
 void OnGUI()
 
