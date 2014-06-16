@@ -42,7 +42,7 @@ public class pbullets : MonoBehaviour {
 				
 				Instantiate(playerbullets, turretpos[chosenturret].transform.position, turretpos[chosenturret].transform.rotation);
 				weaponlimit = weaponlimit-1;    
-	//			print ("bullet");
+				print(pbulletactive);
 			}
 		}
 		else{

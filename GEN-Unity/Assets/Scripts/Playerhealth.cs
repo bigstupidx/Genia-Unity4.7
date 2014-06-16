@@ -21,7 +21,7 @@ public class Playerhealth : MonoBehaviour {
 		phealth = mainhealth;
 	}
 
-	void addhealth()
+	public void addhealth()
 
 	{
 		uphealth = false;
@@ -41,7 +41,7 @@ public class Playerhealth : MonoBehaviour {
 
 	void Update()
 	{
-	//	currenthealth.text = phealth.ToString();
+		currenthealth.text = phealth.ToString();
 
 		
 		if(uphealth)	
@@ -51,20 +51,6 @@ public class Playerhealth : MonoBehaviour {
 
 	}
 
-	void OnGUI()
-
-	{
-//		if(GUI.Button(new Rect(410,10,100,50),"Reset health"))
-//		{
-//			phealth = mainhealth;
-//
-//			if(!transform.FindChild("playershield").gameObject.activeSelf)
-//			{
-//				transform.FindChild("playershield").gameObject.SetActive(true);
-//			}
-//		}
-		             
-	}
 
 	void OnCollisionEnter(Collision pcollide)
 	{

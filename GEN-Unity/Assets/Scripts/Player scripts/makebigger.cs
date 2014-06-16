@@ -13,7 +13,7 @@ public class makebigger : MonoBehaviour {
 
 	{
 		playerscale = transform.lossyScale;
-		print(playerscale);
+	//	print(playerscale);
 
 	}
 	

@@ -16,10 +16,10 @@ public class Timer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(timercount == beattime)
-		{
-			leveltimer.text = "You Survived";
-		}
+//		if(timercount == beattime)
+//		{
+//			leveltimer.text = "You Survived";
+//		}
 	 
 	}
 

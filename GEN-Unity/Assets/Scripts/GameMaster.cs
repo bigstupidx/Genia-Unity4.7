@@ -9,7 +9,10 @@ public class GameMaster : MonoBehaviour {
 	public static int deadcount;
 	public static int respawncounter = 0;
 	public int suckedup;
-	private GameObject rangen;
+
+	public Randomselect rangen;
+	private GameObject randomer;
+
 	private GameObject[] respots;
 	private int respotsamount;
 	private int ranrespot;
@@ -27,14 +30,16 @@ public class GameMaster : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		rangen = GameObject.Find("Randomer");
+		//rangen = GameObject.Find("Randomer");
 
-		rangen.SetActive(false);
+
 		deadcount =0;
-
+	//	deadcount = suckedup;
+		randomer = GameObject.Find ("Randomer");
+		randomer.SetActive(false);
 		respots = GameObject.FindGameObjectsWithTag("Respawner");
 		respotsamount = respots.Length;
-		print (respotsamount);
+//		print (respotsamount);
 		ranrespot = Random.Range(0,respotsamount-1);
 
 		sucker = GameObject.Find("sucker");
@@ -55,35 +60,23 @@ public class GameMaster : MonoBehaviour {
 
 		if(deadcount == suckedup)
 		{
-			Randomselect.rancount = resetcount;
-		//	Randomselect.instant1.randomgo();
-			Randomselect.startran = true;
-		 
-			sucker.SetActive(false);
-			deadcount = 0;
+
 			if(firstime)
 			{
-				rangen.SetActive(true);    
+				randomer.SetActive(true);  
 				firstime = false;
 			}
- 
+
+			rangen.randomgo();
+			sucker.SetActive(false);
+			deadcount = 0;
 		}
 
 		if(deadcount > suckedup)	
 		{
-			Randomselect.rancount = resetcount;
-	 
-			Randomselect.startran = true;
-			Randomselect.buttonchanger =true;
-				sucker.SetActive(false);
-				deadcount = deadcount - suckedup;
-			if(firstime)
-			{
-				rangen.SetActive(true);    
-				firstime = false;
-			}   
-	 
-		
+			rangen.randomgo();
+			deadcount = deadcount - suckedup;
+			sucker.SetActive(false);		
 		}
 	}
 
