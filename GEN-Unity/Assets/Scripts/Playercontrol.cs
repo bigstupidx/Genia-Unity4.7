@@ -25,6 +25,7 @@ public class Playercontrol : MonoBehaviour {
 	private Rect goingright;
 	private GUIStyle movementstyle;
 
+	public GameObject trailer;
 
 
 	// Use this for initialization
@@ -50,12 +51,13 @@ public class Playercontrol : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(5f);
 		playerspeed = tempspeed;
+		trailer.gameObject.SetActive(false);
 	}
 
 	void Addspeed()
 
 	{
-			
+		trailer.gameObject.SetActive(true);
 			playerspeed = incspeed;
 		//	print (playerspeed);
 			morespeed = false;
