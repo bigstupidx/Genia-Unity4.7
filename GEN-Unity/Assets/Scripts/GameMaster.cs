@@ -54,7 +54,7 @@ public class GameMaster : MonoBehaviour {
 
 		Creator();
 	
-		sucked.text = deadcount.ToString();
+		//sucked.text = deadcount.ToString();
 
 	 
 

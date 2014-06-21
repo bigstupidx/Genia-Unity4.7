@@ -10,8 +10,9 @@ public class startcounter : MonoBehaviour {
 	public GameObject[] enemymovement;
 	//ref to tween
 	private TweenScale scaler;
-
+	//timerobj
 	public GameObject timerobject;
+
 
 	public string Countertext
 	{
@@ -33,6 +34,7 @@ public class startcounter : MonoBehaviour {
 
 		enemymovement = GameObject.FindGameObjectsWithTag("Enemy");
 		playermovement.GetComponent<Playercontrol>().enabled = false;
+		playermovement.GetComponent<pbullets>().enabled = false;
 
 		timerobject.GetComponent<Timer>().enabled = false;
 
@@ -51,7 +53,7 @@ public class startcounter : MonoBehaviour {
 	{
 		for(int i =3; i>0;i--){
 			countertext.text = i.ToString();
-			yield return new WaitForSeconds(.9f);
+			yield return new WaitForSeconds(1f);
 		
 		}
 		countertext.text = "GO!";
@@ -59,6 +61,7 @@ public class startcounter : MonoBehaviour {
 		countertext.text = "";
 
 		playermovement.GetComponent<Playercontrol>().enabled = true;
+		playermovement.GetComponent<pbullets>().enabled = true;
 
 		for(int i = 0;i<4;i++){
 			enemymovement[i].transform.FindChild("Nose shooter").gameObject.SetActive(true);

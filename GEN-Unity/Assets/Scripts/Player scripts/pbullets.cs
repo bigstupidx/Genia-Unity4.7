@@ -32,24 +32,20 @@ public class pbullets : MonoBehaviour {
 	}
 	
 	IEnumerator Slower(){
-		
-		
-		if(pbulletactive && weaponlimit>0 && Playerhealth.phealth!=0)
-		{
-			for(int i = 0; i<=weaponlimit;i++){
+
+			for(int i = 0; i<=templimit;i++){
 				yield return new WaitForSeconds(.00f);
 				chosenturret = Random.Range(0,turretpos.Length);
 				
 				Instantiate(playerbullets, turretpos[chosenturret].transform.position, turretpos[chosenturret].transform.rotation);
 				weaponlimit = weaponlimit-1;    
-				print(pbulletactive);
+			print(weaponlimit);
 			}
-		}
-		else{
+
 			pbulletactive = false;
 			weaponlimit = templimit;
-		}
-		
+	
+		print(weaponlimit);
 	}
 
 }

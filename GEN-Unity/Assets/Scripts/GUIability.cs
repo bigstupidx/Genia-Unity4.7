@@ -18,6 +18,9 @@ public class GUIability : MonoBehaviour {
 
 	public Playerhealth phealth;
 
+	//the button background
+	public GameObject spritebg;
+
 
 
 	// Use this for initialization
@@ -50,10 +53,11 @@ public class GUIability : MonoBehaviour {
 	public void textchoice()
 
 	{
-
-		chosentextint = randomref.chosenint;
+		chosentextint =0;
+		//chosentextint = randomref.chosenint;
 		abilitytexture.mainTexture = ranability[chosentextint];
 		disbutton.gameObject.SetActive(true);
+		spritebg.gameObject.SetActive(true);
 	}
 
 	public void disablebutton()
@@ -61,6 +65,7 @@ public class GUIability : MonoBehaviour {
 	{
 
 		disbutton.gameObject.SetActive(false);
+		spritebg.gameObject.SetActive(false);
 		abilitystart();
 	}
 

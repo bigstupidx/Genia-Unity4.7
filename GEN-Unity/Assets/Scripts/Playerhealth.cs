@@ -41,7 +41,7 @@ public class Playerhealth : MonoBehaviour {
 
 	void Update()
 	{
-		currenthealth.text = phealth.ToString();
+		//currenthealth.text = phealth.ToString();
 
 		
 		if(uphealth)	
