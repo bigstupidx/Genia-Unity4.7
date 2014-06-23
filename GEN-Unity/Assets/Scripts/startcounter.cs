@@ -67,6 +67,7 @@ public class startcounter : MonoBehaviour {
 			enemymovement[i].transform.FindChild("Nose shooter").gameObject.SetActive(true);
 			enemymovement[i].GetComponent<EnemyAI>().enabled = true;
 		}
+
 		timerobject.GetComponent<Timer>().enabled = true;
 	
 	}

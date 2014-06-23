@@ -6,6 +6,7 @@ public class Timer : MonoBehaviour {
 	public UILabel leveltimer;
 	private float timercount = 0;
 	public float beattime = 0;
+	public static float gametime;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,7 @@ public class Timer : MonoBehaviour {
 
 		while(timercount<beattime){
 		timercount = timercount+1;
+		gametime = timercount;
 		yield return new WaitForSeconds(1f);
 		leveltimer.text = timercount.ToString();
 		}

@@ -12,10 +12,16 @@ public class Playerhealth : MonoBehaviour {
 	public GameObject hcircle;
 	public GameObject sparks;
 	private int healthcounter =0;
+	public Material deathmat;
 
+	//enemy stop at death
+	private GameObject[] currentenemies;
+	//wait time
+	public float waittime = 0;
+	//UIpanel to enable
+	public UIPanel gameoverpanel;
 
 	void Start()
-
 	{
 
 		phealth = mainhealth;
@@ -95,12 +101,27 @@ public class Playerhealth : MonoBehaviour {
 			
 			if(phealth ==0)
 			{
+				hcircle.transform.renderer.material = deathmat;
 				pbullets.pbulletactive =false;
 				EnemyAI.freezer = false;
+				currentenemies = GameObject.FindGameObjectsWithTag("Enemy");
+				StartCoroutine(playerdeath());
 
-				Application.LoadLevel("Demo");
 			}
 		}
 		
+	}
+
+	IEnumerator playerdeath()
+	{
+		for(int i = 0;i<4;i++){
+			currentenemies[i].transform.FindChild("Nose shooter").gameObject.SetActive(false);
+			currentenemies[i].GetComponent<EnemyAI>().enabled =false;		
+		}
+		gameoverpanel.gameObject.SetActive(true);
+		renderer.enabled =false;
+		yield return new WaitForSeconds(waittime);
+
+	//	Application.LoadLevel("Demo");
 	}
 }

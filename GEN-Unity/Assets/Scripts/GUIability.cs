@@ -53,8 +53,8 @@ public class GUIability : MonoBehaviour {
 	public void textchoice()
 
 	{
-		chosentextint =0;
-		//chosentextint = randomref.chosenint;
+		//chosentextint =0;
+		chosentextint = randomref.chosenint;
 		abilitytexture.mainTexture = ranability[chosentextint];
 		disbutton.gameObject.SetActive(true);
 		spritebg.gameObject.SetActive(true);
