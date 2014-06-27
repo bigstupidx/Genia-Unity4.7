@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour {
 	public float beattime = 0;
 	public static float gametime;
 
+
 	// Use this for initialization
 	void Start () {
 		leveltimer.text = timercount.ToString();

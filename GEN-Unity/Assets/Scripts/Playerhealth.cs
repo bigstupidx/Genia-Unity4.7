@@ -20,6 +20,8 @@ public class Playerhealth : MonoBehaviour {
 	public float waittime = 0;
 	//UIpanel to enable
 	public UIPanel gameoverpanel;
+	//timer UI label
+	public UILabel timecounter;
 
 	void Start()
 	{
@@ -119,6 +121,8 @@ public class Playerhealth : MonoBehaviour {
 			currentenemies[i].GetComponent<EnemyAI>().enabled =false;		
 		}
 		gameoverpanel.gameObject.SetActive(true);
+		timecounter.GetComponent<Timer>().enabled = false;
+
 		renderer.enabled =false;
 		yield return new WaitForSeconds(waittime);
 
