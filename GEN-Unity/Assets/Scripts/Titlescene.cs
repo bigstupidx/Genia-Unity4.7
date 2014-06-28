@@ -14,29 +14,13 @@ public class Titlescene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
-		//StartCoroutine(Waitatstart());
 
-	//	arrowbutton	= new Rect(Screen.width - 100,Screen.height - 100,100,100);
-	
 	}
 
 	void Update()
 	{
-//		for(int i =0; i<Input.touchCount;i++)
-//		{
-//			goarrow = arrowbutton.Contains(Input.touches[i].position);
-//		}
-//
-//		if(Input.GetMouseButton(0))
-//			
-//		{
-//			Vector2 mousePosition = Input.mousePosition;
-//			mousePosition.y = Screen.height - mousePosition.y;
-//
-//			goarrow = arrowbutton.Contains(mousePosition);
-//		}
-
+		if (Input.GetKeyDown(KeyCode.Escape)) 
+			Application.Quit();
 	}
 
 	public void startgame()
@@ -48,15 +32,5 @@ public class Titlescene : MonoBehaviour {
 	{
 		helper.gameObject.SetActive(true);
 	}
-void OnGUI()
 
-	{
-//		GUI.Label(arrowbutton, arrowtext,"label");
-//
-//		if(goarrow)
-//		{
-//			Application.LoadLevel("Demo");
-//		}
-
-	}
 }
