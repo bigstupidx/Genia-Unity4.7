@@ -22,6 +22,8 @@ public class Randomselect : MonoBehaviour {
 	public static bool startran=false;
  
 	public int resetcount;
+	//randomaudioselect
+	public AudioClip audioran;
 
 
 	// Use this for initialization
@@ -34,28 +36,7 @@ public class Randomselect : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-//		if(startran){
-//		//	randomgo();
-//
-//		if(rancount >0)
-//		{
-//			rancount = rancount -1;
-//			ranint = Random.Range(0,ranweapon.Length);
-//			renderer.material =ranweapon[ranint];
-//			buttontexture = blanktext;
-//		}
-//		if(rancount<=0){
-//		//ngui
-//		GUIability.textinstant.textchoice();
-//		//old
-//		chosenweapon = ranweapon[ranint];
-//		renderer.material = chosenweapon;
-//		buttontexture = weaponTextures [ranint];
-//		chosenint = ranint;
-//		renderer.material = blankmat;
-//		buttonchanger = true;
-//		}
-//		}
+
 	}
 
 	public void randomgo()
@@ -68,6 +49,7 @@ public class Randomselect : MonoBehaviour {
 		print (rancount);
 		while( rancount >0)
 		{
+			audio.PlayOneShot(audioran,1f);
 			rancount--;
 			ranint = Random.Range(0,ranweapon.Length);
 			renderer.material =ranweapon[ranint];

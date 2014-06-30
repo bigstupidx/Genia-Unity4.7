@@ -12,6 +12,10 @@ public class startcounter : MonoBehaviour {
 	private TweenScale scaler;
 	//timerobj
 	public GameObject timerobject;
+	//audio for 1 2 3
+	public AudioClip audionum;
+	//audio go
+	public AudioClip audiogo;
 
 
 	public string Countertext
@@ -52,11 +56,13 @@ public class startcounter : MonoBehaviour {
 	IEnumerator startgame()
 	{
 		for(int i =3; i>0;i--){
+			audio.PlayOneShot(audionum,1f);
 			countertext.text = i.ToString();
 			yield return new WaitForSeconds(1f);
-		
+
 		}
 		countertext.text = "GO!";
+		audio.PlayOneShot(audiogo,1f);
 		yield return new WaitForSeconds(.5f);
 		countertext.text = "";
 
