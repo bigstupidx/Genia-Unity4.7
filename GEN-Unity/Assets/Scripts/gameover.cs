@@ -68,8 +68,9 @@ public class gameover : MonoBehaviour {
 		{
 			print ("blinking");
 			highscoretext.SetActive(true);
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(.5f);
 			highscoretext.SetActive(false);
+			yield return new WaitForSeconds(.5f);
 		}
 
 		highscoretext.SetActive(true);
