@@ -14,6 +14,9 @@ public class Playerhealth : MonoBehaviour {
 	private int healthcounter =0;
 	public Material deathmat;
 
+	//sucker reference
+	public GameObject suckeroffer;
+
 	//enemy stop at death
 	private GameObject[] currentenemies;
 	//wait time
@@ -57,6 +60,16 @@ public class Playerhealth : MonoBehaviour {
 			addhealth();
 		}
 
+
+		if(phealth ==0)
+		{
+			currentenemies = GameObject.FindGameObjectsWithTag("Enemy");
+			for(int i = 0;i<4;i++){
+				currentenemies[i].transform.FindChild("Nose shooter").gameObject.SetActive(false);
+				currentenemies[i].GetComponent<EnemyAI>().enabled =false;		
+			}
+			suckeroffer.gameObject.SetActive(false);
+		}
 	}
 
 
@@ -108,7 +121,6 @@ public class Playerhealth : MonoBehaviour {
 				EnemyAI.freezer = false;
 				currentenemies = GameObject.FindGameObjectsWithTag("Enemy");
 				StartCoroutine(playerdeath());
-
 			}
 		}
 		
@@ -120,12 +132,13 @@ public class Playerhealth : MonoBehaviour {
 			currentenemies[i].transform.FindChild("Nose shooter").gameObject.SetActive(false);
 			currentenemies[i].GetComponent<EnemyAI>().enabled =false;		
 		}
+		suckeroffer.gameObject.SetActive(false);
+
 		gameoverpanel.gameObject.SetActive(true);
 		timecounter.GetComponent<Timer>().enabled = false;
 
 		renderer.enabled =false;
 		yield return new WaitForSeconds(waittime);
 
-	//	Application.LoadLevel("Demo");
 	}
 }

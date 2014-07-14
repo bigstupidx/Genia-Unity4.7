@@ -21,6 +21,9 @@ public class GUIability : MonoBehaviour {
 	//the button background
 	public GameObject spritebg;
 
+	//sound
+	public AudioClip pressingbutton;
+
 
 
 	// Use this for initialization
@@ -63,7 +66,8 @@ public class GUIability : MonoBehaviour {
 	public void disablebutton()
 
 	{
-
+		audio.PlayOneShot(pressingbutton);
+	
 		disbutton.gameObject.SetActive(false);
 		spritebg.gameObject.SetActive(false);
 		abilitystart();
