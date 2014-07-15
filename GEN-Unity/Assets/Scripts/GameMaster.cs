@@ -52,6 +52,8 @@ public class GameMaster : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Escape)) 
 			Application.Quit();
 
+		Screen.SetResolution(1024,600,true,60);
+
 		Creator();
 	
 		//sucked.text = deadcount.ToString();
