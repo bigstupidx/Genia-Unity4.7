@@ -14,6 +14,13 @@ public class Playerhealth : MonoBehaviour {
 	private int healthcounter =0;
 	public Material deathmat;
 
+	//material health changer
+	public Material healthmat;
+	public Material tempmat;
+	public Material orangemat;
+	public Material yellowmat;
+	public Material redmat;
+
 	//sucker reference
 	public GameObject suckeroffer;
 
@@ -28,7 +35,7 @@ public class Playerhealth : MonoBehaviour {
 
 	void Start()
 	{
-
+		tempmat = healthmat;
 		phealth = mainhealth;
 	}
 
@@ -100,12 +107,15 @@ public class Playerhealth : MonoBehaviour {
 				break;
 			case 2:
 				hcircle.transform.renderer.material = healthcircle[healthcounter];
+			//	healthmat = orangemat;
 				break;
 			case 1:
 				hcircle.transform.renderer.material = healthcircle[healthcounter];
+			//	healthmat = yellowmat;
 				break;		
 			case 0:
 				hcircle.transform.renderer.material = healthcircle[healthcounter];
+			//	healthmat = redmat;
 				break;	
 			}
 
@@ -116,6 +126,7 @@ public class Playerhealth : MonoBehaviour {
 			
 			if(phealth ==0)
 			{
+			//	gameObject.GetComponentInChildren<TrailRenderer>().enabled = false;
 				hcircle.transform.renderer.material = deathmat;
 				pbullets.pbulletactive =false;
 				EnemyAI.freezer = false;

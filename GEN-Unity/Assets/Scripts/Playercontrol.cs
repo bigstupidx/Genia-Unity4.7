@@ -133,25 +133,6 @@ public void wavemaker()
 		}
 
 
-//		for(int i =0; i<Input.touchCount;i++)
-//		{
-//			goup = goingup.Contains(Input.touches[i].position);
-//			godown = goingdown.Contains(Input.touches[i].position);
-//			goleft = goingleft.Contains(Input.touches[i].position);
-//			goright = goingright.Contains(Input.touches[i].position);
-//		}
-//		if(Input.GetMouseButton(0))
-//
-//		{
-//			Vector2 mousePosition = Input.mousePosition;
-//			mousePosition.y = Screen.height - mousePosition.y;
-//			goup = goingup.Contains(mousePosition);
-//			godown = goingdown.Contains(mousePosition);
-//			goleft = goingleft.Contains(mousePosition);
-//			goright = goingright.Contains(mousePosition);
-//		}
-
-
 	}
 
 	// Update is called once per frame
@@ -186,22 +167,4 @@ public void wavemaker()
 		}
 	}
 
-	void OnGUI()
-	{
-//		if(movementstyle ==null)
-//		{
-//			movementstyle = new GUIStyle("button");
-//		}
-//
-//
-//		GUI.Box(goingup,"^",movementstyle);
-//
-//		GUI.Box(goingdown,"v",movementstyle);
-//
-//		GUI.Box(goingleft,"<",movementstyle);
-//
-//		GUI.Box(goingright,">",movementstyle);
-//	
-
-	}
 }

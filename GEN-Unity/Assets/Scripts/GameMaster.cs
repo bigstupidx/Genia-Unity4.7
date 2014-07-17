@@ -32,7 +32,7 @@ public class GameMaster : MonoBehaviour {
 	void Start () {
 		//rangen = GameObject.Find("Randomer");
 
-
+		Screen.SetResolution(1024,600,true,60);
 		deadcount =0;
 	//	deadcount = suckedup;
 		randomer = GameObject.Find ("Randomer");
@@ -52,7 +52,7 @@ public class GameMaster : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Escape)) 
 			Application.Quit();
 
-		Screen.SetResolution(1024,600,true,60);
+
 
 		Creator();
 	
