@@ -20,6 +20,8 @@ public class GameMaster : MonoBehaviour {
 	private Rect pausebutton;
 	private bool firstime = true;
 	public int resetcount;
+	//enemy objects
+	private GameObject[] enemyobjs;
 
 
 
@@ -79,6 +81,23 @@ public class GameMaster : MonoBehaviour {
 			rangen.randomgo();
 			deadcount = deadcount - suckedup;
 			sucker.SetActive(false);		
+		}
+	}
+
+	public void coustarter()
+
+	{
+		StartCoroutine(Needtime());
+	}
+
+	IEnumerator Needtime()
+	{
+		enemyobjs = GameObject.FindGameObjectsWithTag("Enemy");
+		yield return new WaitForSeconds (5f);
+		
+		for(int i = 0;i<4;i++){
+			enemyobjs[i].transform.FindChild("Nose shooter").gameObject.SetActive(true);
+			enemyobjs[i].GetComponent<EnemyAI>().enabled = true;
 		}
 	}
 

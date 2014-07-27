@@ -15,7 +15,7 @@ public class Titlescene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		Screen.SetResolution(1024,600,true,60);
 	}
 
 	void Update()

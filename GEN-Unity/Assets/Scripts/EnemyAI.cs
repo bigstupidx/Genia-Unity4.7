@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
+		print (freezer);
 		ptarget = GameObject.FindWithTag("Player").transform;
 		targetvector = GameObject.FindWithTag("Player").transform.position;
 		rfloat = Random.Range(-20,20);	
@@ -27,6 +28,7 @@ public class EnemyAI : MonoBehaviour {
 		
 		if(!freezer)
 		{
+
 			transform.LookAt(ptarget);
 
 			if(Vector3.Distance(ptarget.position,transform.position)>playerdistance)
@@ -37,7 +39,6 @@ public class EnemyAI : MonoBehaviour {
 				rigidbody.velocity = transform.forward * espeed *-1;
 			}
 	
-			
 				if(rfloat<0)
 			{
 				rfloat = -1f;
@@ -46,56 +47,21 @@ public class EnemyAI : MonoBehaviour {
 		}
 		else 
 		{
+			print (freezer);
 			StartCoroutine(Unfreeze());
 		}
 		
 	}
 
 	
-	// Update is called once per frame
-/*	void FixedUpdate () {
-	
-		if(!freezer)
-		{
 
-
-		if(Vector3.Distance(ptarget.position,transform.position)>playerdistance)
-		{
-			transform.LookAt(ptarget);
-			//this.rigidbody.AddForce(Vector3.forward * espeed,ForceMode.Impulse);
-		//  transform.Translate(0,0,espeed*Time.deltaTime);
-			rigidbody.velocity = transform.forward * espeed;
-		}
-
-		//if(Vector3.Distance(ptarget.position,transform.position)==distance)
-		else {
-			transform.LookAt(ptarget);
-			if(rfloat<0)
-			{
-				rfloat = -1f;
-				rigidbody.velocity = transform.right*rotatespeed*rfloat;
-			}
-			else
-			{
-				rfloat = 1f;
-			}
-			
-
-			//transform.Translate(30f*Time.deltaTime*rfloat,0,0);
-		}
-		}
-		else 
-		{
-			StartCoroutine(Unfreeze());
-		}
-	}
-	*/
 
 	IEnumerator Unfreeze()
 	{
 		transform.FindChild("Nose shooter").gameObject.SetActive(false);
 		yield return new WaitForSeconds(freezetime);
 		freezer = false;
+		print (freezer);
 		transform.FindChild("Nose shooter").gameObject.SetActive(true);
 	}
 	

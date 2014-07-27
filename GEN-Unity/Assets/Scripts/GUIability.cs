@@ -18,16 +18,21 @@ public class GUIability : MonoBehaviour {
 
 	public Playerhealth phealth;
 
+	private GameObject[] eobjs;
+
 	//the button background
 	public GameObject spritebg;
 
 	//sound
 	public AudioClip pressingbutton;
 
+	public GameMaster freezestart;
+
 
 
 	// Use this for initialization
 	void Start () {
+
 		abilitytexture = this.gameObject.GetComponent<UITexture>();
 		textinstant = this;
 		disbutton = this.gameObject.GetComponent<UIButton>();
@@ -56,7 +61,7 @@ public class GUIability : MonoBehaviour {
 	public void textchoice()
 
 	{
-		//chosentextint =1;
+		//chosentextint =2;
 		chosentextint = randomref.chosenint;
 		abilitytexture.mainTexture = ranability[chosentextint];
 		disbutton.gameObject.SetActive(true);
@@ -90,9 +95,16 @@ public class GUIability : MonoBehaviour {
  
 			break;
 		case 2:
-			
-			EnemyAI.freezer = true;
-	 		
+
+			eobjs = GameObject.FindGameObjectsWithTag("Enemy");
+			for(int i = 0;i<4;i++){
+				eobjs[i].transform.FindChild("Nose shooter").gameObject.SetActive(false);
+				eobjs[i].GetComponent<EnemyAI>().enabled = false;
+			}
+
+			freezestart.coustarter();
+		//	EnemyAI.freezer = true;
+
 			break;
 		case 3: 
 			
@@ -113,8 +125,13 @@ public class GUIability : MonoBehaviour {
 
 	}
 
-	IEnumerator Needtime()
-	{
-		yield return new WaitForSeconds (5f);
-	}
+//	IEnumerator Needtime()
+//	{
+//		yield return new WaitForSeconds (5f);
+//
+//		for(int i = 0;i<4;i++){
+//			eobjs[i].transform.FindChild("Nose shooter").gameObject.SetActive(true);
+//			eobjs[i].GetComponent<EnemyAI>().enabled = true;
+//		}
+//	}
 }

@@ -16,6 +16,7 @@ public class startcounter : MonoBehaviour {
 	public AudioClip audionum;
 	//audio go
 	public AudioClip audiogo;
+	//
 
 
 	public string Countertext

@@ -24,15 +24,19 @@ public class Timer : MonoBehaviour {
 //		}
 	 
 	}
+	void OnDisable()
+	{
+		StopAllCoroutines();
+	}
 
 	IEnumerator Countdown()
 	{
 
 		while(timercount<beattime){
-		timercount = timercount+1;
-		gametime = timercount;
-		yield return new WaitForSeconds(1f);
-		leveltimer.text = timercount.ToString();
+			yield return new WaitForSeconds(1f);
+			timercount = timercount+1;
+			gametime = timercount;
+			leveltimer.text = timercount.ToString();
 		}
 	
 		yield return 0;

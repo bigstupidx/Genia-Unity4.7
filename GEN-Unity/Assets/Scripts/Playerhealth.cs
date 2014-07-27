@@ -17,9 +17,10 @@ public class Playerhealth : MonoBehaviour {
 	//material health changer
 	public Material healthmat;
 	public Material tempmat;
-	public Material orangemat;
-	public Material yellowmat;
-	public Material redmat;
+	public Color orangemat;
+	public Color yellowmat;
+	public Color redmat;
+	public Color greenmat;
 
 	//sucker reference
 	public GameObject suckeroffer;
@@ -61,7 +62,38 @@ public class Playerhealth : MonoBehaviour {
 	{
 		//currenthealth.text = phealth.ToString();
 
+		if(phealth<=50 && phealth>=40)
+		{
+			hcircle.transform.renderer.material = healthcircle[4];
+			//renderer.materials[3].color = greenmat;
+		}
+
+		if(phealth<=39 && phealth>=30)
+		{
+			hcircle.transform.renderer.material = healthcircle[3];
+			//renderer.materials[3].color = greenmat;
+		}
+
+		if(phealth<=29 && phealth>=20)
+		{
+			hcircle.transform.renderer.material = healthcircle[2];
+			//renderer.materials[3].color = yellowmat;
+		}
+
+		if(phealth<=19 && phealth>=10)
+		{
+			hcircle.transform.renderer.material = healthcircle[1];
+			//renderer.materials[3].color = orangemat;
+		}
+
+		if(phealth<=9 && phealth>=1)
+		{
+			hcircle.transform.renderer.material = healthcircle[0];
+			//renderer.materials[3].color = redmat;
+		}
 		
+		renderer.materials[3].color = Color.Lerp(redmat, greenmat, phealth / 50f);
+
 		if(uphealth)	
 		{
 			addhealth();
@@ -97,27 +129,29 @@ public class Playerhealth : MonoBehaviour {
 			healthcounter = Mathf.Abs(phealth/10);
 
 			//print (healthcounter);
-			switch (healthcounter)
+			/*switch (healthcounter)
 			{
 			case 4:
 				hcircle.transform.renderer.material = healthcircle[healthcounter];
+				renderer.materials[3].color = greenmat;
 				break;
 			case 3:
 				hcircle.transform.renderer.material = healthcircle[healthcounter];
+				renderer.materials[3].color = greenmat;
 				break;
 			case 2:
 				hcircle.transform.renderer.material = healthcircle[healthcounter];
-			//	healthmat = orangemat;
+				renderer.materials[3].color = yellowmat;
 				break;
 			case 1:
 				hcircle.transform.renderer.material = healthcircle[healthcounter];
-			//	healthmat = yellowmat;
+				renderer.materials[3].color = orangemat;
 				break;		
 			case 0:
 				hcircle.transform.renderer.material = healthcircle[healthcounter];
-			//	healthmat = redmat;
+				renderer.materials[3].color = redmat;
 				break;	
-			}
+			}*/
 
 			if(phealth ==10)
 			{
@@ -139,11 +173,11 @@ public class Playerhealth : MonoBehaviour {
 
 	IEnumerator playerdeath()
 	{
-		for(int i = 0;i<4;i++){
-			currentenemies[i].transform.FindChild("Nose shooter").gameObject.SetActive(false);
-			currentenemies[i].GetComponent<EnemyAI>().enabled =false;		
-		}
-		suckeroffer.gameObject.SetActive(false);
+//		for(int i = 0;i<4;i++){
+//			currentenemies[i].transform.FindChild("Nose shooter").gameObject.SetActive(false);
+//			currentenemies[i].GetComponent<EnemyAI>().enabled =false;		
+//		}
+//		suckeroffer.gameObject.SetActive(false);
 
 		gameoverpanel.gameObject.SetActive(true);
 		timecounter.GetComponent<Timer>().enabled = false;
