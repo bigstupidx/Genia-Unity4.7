@@ -16,7 +16,8 @@ public class startcounter : MonoBehaviour {
 	public AudioClip audionum;
 	//audio go
 	public AudioClip audiogo;
-	//
+	//turn off UI widget
+	public UIWidget UIcontroller;
 
 
 	public string Countertext
@@ -66,6 +67,8 @@ public class startcounter : MonoBehaviour {
 		audio.PlayOneShot(audiogo,1f);
 		yield return new WaitForSeconds(.5f);
 		countertext.text = "";
+
+		UIcontroller.gameObject.SetActive(true);
 
 		playermovement.GetComponent<Playercontrol>().enabled = true;
 		playermovement.GetComponent<pbullets>().enabled = true;

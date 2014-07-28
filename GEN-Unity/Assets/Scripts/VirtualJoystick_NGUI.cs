@@ -87,7 +87,7 @@ public class VirtualJoystick_NGUI : MonoBehaviour
 		}
 
 		Vector3 tempVec = new Vector3(JoystickDirection.x, 0f, JoystickDirection.y);
-		Player.rigidbody.AddForce(tempVec * JoystickMagnitude * playerspeedf * Time.deltaTime);
+		Player.rigidbody.AddForce(tempVec * JoystickMagnitude * playerspeedf * Time.deltaTime,ForceMode.Acceleration);
 		Debug.Log(JoystickDirection);
 
 		ClampJoystickPosition();
