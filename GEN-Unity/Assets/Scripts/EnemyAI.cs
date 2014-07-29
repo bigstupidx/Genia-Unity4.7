@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		print (freezer);
+	//	print (freezer);
 		ptarget = GameObject.FindWithTag("Player").transform;
 		targetvector = GameObject.FindWithTag("Player").transform.position;
 		rfloat = Random.Range(-20,20);	

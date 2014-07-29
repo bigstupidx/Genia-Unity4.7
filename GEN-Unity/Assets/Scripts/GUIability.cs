@@ -10,7 +10,10 @@ public class GUIability : MonoBehaviour {
 	private UITexture abilitytexture;
 	public static GUIability textinstant;
 
-	private UIButton disbutton;
+	//turns off uibutton script
+	public GUIability disbutton;
+
+	public UIButton buttonobj;
 
 	public Randomselect randomref;
 
@@ -35,7 +38,7 @@ public class GUIability : MonoBehaviour {
 
 		abilitytexture = this.gameObject.GetComponent<UITexture>();
 		textinstant = this;
-		disbutton = this.gameObject.GetComponent<UIButton>();
+		buttonobj = this.gameObject.GetComponent<UIButton>();
 	}
 	
 	// Update is called once per frame
@@ -64,7 +67,8 @@ public class GUIability : MonoBehaviour {
 		//chosentextint =2;
 		chosentextint = randomref.chosenint;
 		abilitytexture.mainTexture = ranability[chosentextint];
-		disbutton.gameObject.SetActive(true);
+		buttonobj.gameObject.SetActive(true);
+		disbutton.gameObject.GetComponent<UIButton>().enabled = true;
 		spritebg.gameObject.SetActive(true);
 	}
 
@@ -73,7 +77,8 @@ public class GUIability : MonoBehaviour {
 	{
 		audio.PlayOneShot(pressingbutton);
 	
-		disbutton.gameObject.SetActive(false);
+		disbutton.gameObject.GetComponent<UIButton>().enabled = false;
+		buttonobj.gameObject.SetActive(false);
 		spritebg.gameObject.SetActive(false);
 		abilitystart();
 	}

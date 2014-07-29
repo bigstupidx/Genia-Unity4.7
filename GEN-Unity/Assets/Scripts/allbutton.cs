@@ -15,7 +15,6 @@ public class allbutton : MonoBehaviour {
 		weaponchoice = GameObject.Find("sucker");
 		weaponchoice.SetActive(false);
 
-	//	sucker = new Rect (100,Screen.height -200,300,300);
 
 	 	}
 
