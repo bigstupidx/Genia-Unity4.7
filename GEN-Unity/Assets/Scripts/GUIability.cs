@@ -64,7 +64,7 @@ public class GUIability : MonoBehaviour {
 	public void textchoice()
 
 	{
-		//chosentextint =2;
+		//chosentextint =5;
 		chosentextint = randomref.chosenint;
 		abilitytexture.mainTexture = ranability[chosentextint];
 		buttonobj.gameObject.SetActive(true);
@@ -123,7 +123,7 @@ public class GUIability : MonoBehaviour {
 			break;
 		case 5:
 			
-			Playercontrol.bigwave = true;
+		//	Playercontrol.bigwave = true;
 			waves.wavemaker();
 			break;
 		}

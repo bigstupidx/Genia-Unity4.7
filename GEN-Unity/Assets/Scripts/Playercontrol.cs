@@ -68,10 +68,10 @@ public class Playercontrol : MonoBehaviour {
 
 public void wavemaker()
 	{	 
-		if(bigwave){
+		//if(bigwave){
 		Instantiate(waveobj,transform.position,Quaternion.identity);
-		bigwave = false;
-		}
+	//	bigwave = false;
+	//	}
 	}
 
 	public void Playerup()
