@@ -5,7 +5,6 @@ public class Titlescene : MonoBehaviour {
 
 
 	private Rect arrowbutton;
-	public Texture arrowtext;
 	private bool goarrow;
 	private GUIStyle inputstyle;
 	public UIPanel helper;
