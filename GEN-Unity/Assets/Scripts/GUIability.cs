@@ -64,8 +64,8 @@ public class GUIability : MonoBehaviour {
 	public void textchoice()
 
 	{
-		//chosentextint =5;
-		chosentextint = randomref.chosenint;
+		chosentextint =0;
+		//chosentextint = randomref.chosenint;
 		abilitytexture.mainTexture = ranability[chosentextint];
 		buttonobj.gameObject.SetActive(true);
 		disbutton.gameObject.GetComponent<UIButton>().enabled = true;

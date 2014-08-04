@@ -21,6 +21,7 @@ public class allbutton : MonoBehaviour {
 	public void ActiveSucker()
 
 	{
+		//weaponchoice = GameObject.Find("sucker");
 		weaponchoice.SetActive(true);
 	}
 
