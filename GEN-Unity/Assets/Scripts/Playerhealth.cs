@@ -118,6 +118,13 @@ public class Playerhealth : MonoBehaviour {
 		int ehitcounter =0;
 	 	ContactPoint ehit;
 		ehit = pcollide.contacts[ehitcounter];
+
+		if(pcollide.collider.name == "outerwalls")
+		{
+			phealth = 0;
+			transform.FindChild("playershield").gameObject.SetActive(false);
+			StartCoroutine(playerdeath());
+		}
 			
 		if(pcollide.collider.tag == "eattack")
 		{
@@ -163,8 +170,7 @@ public class Playerhealth : MonoBehaviour {
 			//	gameObject.GetComponentInChildren<TrailRenderer>().enabled = false;
 				hcircle.transform.renderer.material = deathmat;
 				pbullets.pbulletactive =false;
-				EnemyAI.freezer = false;
-				currentenemies = GameObject.FindGameObjectsWithTag("Enemy");
+			//	currentenemies = GameObject.FindGameObjectsWithTag("Enemy");
 				StartCoroutine(playerdeath());
 			}
 		}

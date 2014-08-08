@@ -46,7 +46,7 @@ public class Randomselect : MonoBehaviour {
 
 	IEnumerator decran()
 	{
-		print (rancount);
+	//	print (rancount);
 		while( rancount >0)
 		{
 			audio.PlayOneShot(audioran,1f);

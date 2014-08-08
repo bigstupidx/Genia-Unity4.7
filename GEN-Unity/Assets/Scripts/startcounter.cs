@@ -73,7 +73,6 @@ public class startcounter : MonoBehaviour {
 		playermovement.GetComponent<Playercontrol>().enabled = true;
 		playermovement.GetComponent<pbullets>().enabled = true;
 
-		EnemyAI.freezer = false;
 		for(int i = 0;i<4;i++){
 			enemymovement[i].transform.FindChild("Nose shooter").gameObject.SetActive(true);
 			enemymovement[i].GetComponent<EnemyAI>().enabled = true;

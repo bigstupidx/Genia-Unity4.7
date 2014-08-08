@@ -30,8 +30,11 @@ public class GUIability : MonoBehaviour {
 	public AudioClip pressingbutton;
 
 	public GameMaster freezestart;
+	//will be frezzing enemies
+	public static bool freezer = false;
 
-
+	//the enemy counter
+	public int enemycount=0;
 
 	// Use this for initialization
 	void Start () {
@@ -64,8 +67,8 @@ public class GUIability : MonoBehaviour {
 	public void textchoice()
 
 	{
-		chosentextint =0;
-		//chosentextint = randomref.chosenint;
+		//chosentextint =1;
+		chosentextint = randomref.chosenint;
 		abilitytexture.mainTexture = ranability[chosentextint];
 		buttonobj.gameObject.SetActive(true);
 		disbutton.gameObject.GetComponent<UIButton>().enabled = true;
@@ -100,9 +103,10 @@ public class GUIability : MonoBehaviour {
  
 			break;
 		case 2:
-
+			freezer = true;
 			eobjs = GameObject.FindGameObjectsWithTag("Enemy");
-			for(int i = 0;i<4;i++){
+			enemycount =GameObject.FindGameObjectsWithTag("Enemy").Length;
+			for(int i = 0;i<enemycount;i++){
 				eobjs[i].transform.FindChild("Nose shooter").gameObject.SetActive(false);
 				eobjs[i].GetComponent<EnemyAI>().enabled = false;
 			}
@@ -130,13 +134,4 @@ public class GUIability : MonoBehaviour {
 
 	}
 
-//	IEnumerator Needtime()
-//	{
-//		yield return new WaitForSeconds (5f);
-//
-//		for(int i = 0;i<4;i++){
-//			eobjs[i].transform.FindChild("Nose shooter").gameObject.SetActive(true);
-//			eobjs[i].GetComponent<EnemyAI>().enabled = true;
-//		}
-//	}
 }

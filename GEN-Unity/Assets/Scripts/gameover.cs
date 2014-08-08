@@ -15,7 +15,7 @@ public class gameover : MonoBehaviour {
 
 	void OnEnable(){
 
-		print(PlayerPrefs.GetInt("HScore"));
+	//	print(PlayerPrefs.GetInt("HScore"));
 		//PlayerPrefs.DeleteKey("HScore");
 
 		finaldead  = DeadEnemyCounter.enemyend;

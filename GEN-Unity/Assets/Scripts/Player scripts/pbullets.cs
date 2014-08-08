@@ -39,13 +39,13 @@ public class pbullets : MonoBehaviour {
 				
 				Instantiate(playerbullets, turretpos[chosenturret].transform.position, turretpos[chosenturret].transform.rotation);
 				weaponlimit = weaponlimit-1;    
-			print(weaponlimit);
+		//	print(weaponlimit);
 			}
 
 			pbulletactive = false;
 			weaponlimit = templimit;
 	
-		print(weaponlimit);
+	//	print(weaponlimit);
 	}
 
 }

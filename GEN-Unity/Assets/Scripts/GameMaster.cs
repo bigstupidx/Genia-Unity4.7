@@ -22,6 +22,8 @@ public class GameMaster : MonoBehaviour {
 	public int resetcount;
 	//enemy objects
 	private GameObject[] enemyobjs;
+	//enemy object counter
+	private int currentenemycount;
 
 
 
@@ -54,13 +56,7 @@ public class GameMaster : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Escape)) 
 			Application.Quit();
 
-
-
-		Creator();
-	
-		//sucked.text = deadcount.ToString();
-
-	 
+	//	Creator();
 
 		if(deadcount == suckedup)
 		{
@@ -92,27 +88,27 @@ public class GameMaster : MonoBehaviour {
 
 	IEnumerator Needtime()
 	{
-		enemyobjs = GameObject.FindGameObjectsWithTag("Enemy");
 		yield return new WaitForSeconds (5f);
-		
+		enemyobjs = GameObject.FindGameObjectsWithTag("Enemy");
 		for(int i = 0;i<4;i++){
 			enemyobjs[i].transform.FindChild("Nose shooter").gameObject.SetActive(true);
 			enemyobjs[i].GetComponent<EnemyAI>().enabled = true;
 		}
+		GUIability.freezer = false;
 	}
 
-	void Creator()
+	public void Creator()
 	{
-		if(respawncounter >0)
-		{
-			Instantiate(Renemy, respots[ranrespot].transform.position, respots[ranrespot].transform.rotation);
-			respawncounter = respawncounter -1;	
-		}
-		else
-		{
+		//currentenemycount = GameObject.FindGameObjectsWithTag("Enemy").Length;
 
-		}
-	
-	
+	//	if(currentenemycount !=3)
+	//	{
+			Instantiate(Renemy, respots[ranrespot].transform.position, respots[ranrespot].transform.rotation);
+	//	}
+	//	else
+	//	{
+
+	//	}
+
 	}
 }
