@@ -15,8 +15,6 @@ public class gameover : MonoBehaviour {
 
 	void OnEnable(){
 
-	//	print(PlayerPrefs.GetInt("HScore"));
-		//PlayerPrefs.DeleteKey("HScore");
 
 		finaldead  = DeadEnemyCounter.enemyend;
 		finaltime = Timer.gametime;
@@ -75,6 +73,12 @@ public class gameover : MonoBehaviour {
 
 		highscoretext.SetActive(true);
 	
+	}
+
+	public void gotomain()
+
+	{
+		Application.LoadLevel("Title");
 	}
 
 	// Update is called once per frame

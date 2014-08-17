@@ -51,7 +51,6 @@ public class InstructionPanel : MonoBehaviour {
 	public void exitpanel()
 		
 	{
-
 		helppanel.gameObject.SetActive(false);
 	}
 
@@ -74,7 +73,7 @@ public class InstructionPanel : MonoBehaviour {
 			helptextpanel.mainTexture = helptext[textcounter];
 		}
 	}
-
+ 
 	// Use this for initialization
 	void Start () {
 	
