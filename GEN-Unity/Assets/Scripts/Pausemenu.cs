@@ -18,6 +18,11 @@ public class Pausemenu : MonoBehaviour {
 		Application.Quit();
 	}
 
+	public void backtomain()
+	{
+		Application.LoadLevel("Title");
+	}
+
 	public void resumegame()
 
 	{

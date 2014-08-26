@@ -1,0 +1,10 @@
+ca-app-pub-9856424462093868/2717380238
+
+
+create ad, timer start at beginning of the start script.
+
+make ad go away when the new level is loaded.
+
+make ad appear after death, 5 seconds
+
+if going back to main menu, show ad
