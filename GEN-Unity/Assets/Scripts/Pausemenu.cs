@@ -20,6 +20,9 @@ public class Pausemenu : MonoBehaviour {
 
 	public void backtomain()
 	{
+		adcontrol.sceneclosed = true;
+		print(adcontrol.sceneclosed);
+		Time.timeScale = 1.0f;
 		Application.LoadLevel("Title");
 	}
 

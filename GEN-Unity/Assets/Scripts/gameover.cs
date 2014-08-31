@@ -78,6 +78,7 @@ public class gameover : MonoBehaviour {
 	public void gotomain()
 
 	{
+		adcontrol.sceneclosed = true;
 		Application.LoadLevel("Title");
 	}
 

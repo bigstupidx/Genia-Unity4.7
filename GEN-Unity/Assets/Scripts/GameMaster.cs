@@ -34,7 +34,8 @@ public class GameMaster : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//rangen = GameObject.Find("Randomer");
+		Time.timeScale = 1.0f;
+	
 
 		Screen.SetResolution(1024,600,true,60);
 		deadcount =0;

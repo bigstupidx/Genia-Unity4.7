@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using HutongGames.PlayMaker;
 
 public class Titlescene : MonoBehaviour {
 
@@ -10,26 +11,58 @@ public class Titlescene : MonoBehaviour {
 	public UIPanel helper;
 	public UIPanel setthings;
 
+	public bool adenable = false;
+
+	//FSM part
+	public FsmBool adcheck = false;
+	//reference
+	public PlayMakerFSM adFSM;
+	//ad game object
+	public GameObject adsplaymaker;
 
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		Screen.SetResolution(1024,600,true,60);
+
+	
+	
+		}
+
+	void Awake()
+	{
+
+	}
+
+	IEnumerator Showads()
+
+	{
+		yield return new WaitForSeconds(1F);
+		adsplaymaker.gameObject.SetActive(true);
+		adcheck = adFSM.FsmVariables.GetFsmBool("adsoff");
+		adcheck.Value = false;
+
 	}
 
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape)) 
 			Application.Quit();
+
+		if(adenable){
+			StartCoroutine(Showads());
+		}
 	}
 
 	public void startgame()
 	{
+		adcheck.Value = true;
 		Application.LoadLevel("Demo");
 	}
 
 	public void helppanel()
 	{
+		//adcheck.Value = true;
 		helper.gameObject.SetActive(true);
 	}
 

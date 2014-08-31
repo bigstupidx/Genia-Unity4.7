@@ -19,6 +19,11 @@ public class startcounter : MonoBehaviour {
 	//turn off UI widget
 	public UIWidget UIcontroller;
 
+	//will turn on playmaker parts
+	public bool addyes = false;
+	public GameObject adbot;
+	public GameObject adcon;
+
 
 	public string Countertext
 	{
@@ -35,7 +40,16 @@ public class startcounter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		scaler = gameObject.GetComponent<TweenScale>();
+
+		//set addyes by editor
+		if(addyes)
+		{
+			adbot.gameObject.SetActive(true);
+			adcon.gameObject.SetActive(true);
+		}
+
+
+	//	scaler = gameObject.GetComponent<TweenScale>();
 		StartCoroutine(startgame());
 
 		enemymovement = GameObject.FindGameObjectsWithTag("Enemy");
