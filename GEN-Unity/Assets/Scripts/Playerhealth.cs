@@ -102,6 +102,8 @@ public class Playerhealth : MonoBehaviour {
 
 		if(phealth ==0)
 		{
+
+
 			currentenemies = GameObject.FindGameObjectsWithTag("Enemy");
 			for(int i = 0;i<4;i++){
 				currentenemies[i].transform.FindChild("Nose shooter").gameObject.SetActive(false);
@@ -179,11 +181,15 @@ public class Playerhealth : MonoBehaviour {
 
 	IEnumerator playerdeath()
 	{
-//		for(int i = 0;i<4;i++){
-//			currentenemies[i].transform.FindChild("Nose shooter").gameObject.SetActive(false);
-//			currentenemies[i].GetComponent<EnemyAI>().enabled =false;		
-//		}
-//		suckeroffer.gameObject.SetActive(false);
+		//add to counter for ad stuff
+		ademperor.deathcounter ++;
+		print(ademperor.deathcounter);
+		//big page ad
+
+		if(ademperor.deathcounter ==3)
+		{
+			yield return new WaitForSeconds(2f);
+		}
 
 		gameoverpanel.gameObject.SetActive(true);
 		timecounter.GetComponent<Timer>().enabled = false;

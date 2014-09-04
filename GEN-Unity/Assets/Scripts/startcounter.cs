@@ -20,9 +20,9 @@ public class startcounter : MonoBehaviour {
 	public UIWidget UIcontroller;
 
 	//will turn on playmaker parts
-	public bool addyes = false;
-	public GameObject adbot;
-	public GameObject adcon;
+//	public bool addyes = false;
+//	public GameObject adbot;
+//	public GameObject adcon;
 
 
 	public string Countertext
@@ -42,11 +42,11 @@ public class startcounter : MonoBehaviour {
 	void Start () {
 
 		//set addyes by editor
-		if(addyes)
-		{
-			adbot.gameObject.SetActive(true);
-			adcon.gameObject.SetActive(true);
-		}
+//		if(addyes)
+//		{
+//			adbot.gameObject.SetActive(true);
+//			adcon.gameObject.SetActive(true);
+//		}
 
 
 	//	scaler = gameObject.GetComponent<TweenScale>();

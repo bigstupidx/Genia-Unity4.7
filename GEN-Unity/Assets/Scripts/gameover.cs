@@ -15,7 +15,6 @@ public class gameover : MonoBehaviour {
 
 	void OnEnable(){
 
-
 		finaldead  = DeadEnemyCounter.enemyend;
 		finaltime = Timer.gametime;
 
