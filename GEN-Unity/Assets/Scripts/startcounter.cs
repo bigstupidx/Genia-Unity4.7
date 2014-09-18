@@ -58,8 +58,12 @@ public class startcounter : MonoBehaviour {
 
 		timerobject.GetComponent<Timer>().enabled = false;
 
-		for(int i = 0;i<4;i++){
+		for(int i = 0;i<enemymovement.Length;i++){
 			enemymovement[i].transform.FindChild("Nose shooter").gameObject.SetActive(false);
+			if(enemymovement[i].gameObject.name == "bouy2")
+			{
+				enemymovement[i].transform.FindChild("Nose shooter2").gameObject.SetActive(false);
+			}
 			enemymovement[i].GetComponent<EnemyAI>().enabled = false;
 		}
 	}
@@ -87,8 +91,12 @@ public class startcounter : MonoBehaviour {
 		playermovement.GetComponent<Playercontrol>().enabled = true;
 		playermovement.GetComponent<pbullets>().enabled = true;
 
-		for(int i = 0;i<4;i++){
+		for(int i = 0;i<enemymovement.Length;i++){
 			enemymovement[i].transform.FindChild("Nose shooter").gameObject.SetActive(true);
+			if(enemymovement[i].gameObject.name == "bouy2")
+			{
+				enemymovement[i].transform.FindChild("Nose shooter2").gameObject.SetActive(true);
+			}
 			enemymovement[i].GetComponent<EnemyAI>().enabled = true;
 		}
 

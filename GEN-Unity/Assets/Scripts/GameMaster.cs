@@ -26,11 +26,12 @@ public class GameMaster : MonoBehaviour {
 	private int currentenemycount;
 
 
-
-//	void OnGUI()
-//	{
-//		GUI.Label(new Rect(100, Screen.height/2, 100, 100),"Test");
-//	}
+	public GameObject renemy2; //bouy2
+	public GameObject renemy3; //bouy3
+			
+	public int randomenemyholder = 0;
+	
+	private int enemylevelcounter = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -100,16 +101,9 @@ public class GameMaster : MonoBehaviour {
 
 	public void Creator()
 	{
-		//currentenemycount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+		ranrespot = Random.Range(0,2);
 
-	//	if(currentenemycount !=3)
-	//	{
-			Instantiate(Renemy, respots[ranrespot].transform.position, respots[ranrespot].transform.rotation);
-	//	}
-	//	else
-	//	{
-
-	//	}
+		Instantiate(Renemy, respots[ranrespot].transform.position, respots[ranrespot].transform.rotation);
 
 	}
 }

@@ -14,6 +14,8 @@ public class Playerhealth : MonoBehaviour {
 	private int healthcounter =0;
 	public Material deathmat;
 
+	public int currentplayerhealth =0;
+
 	//material health changer
 	public Material healthmat;
 	public Material tempmat;
@@ -60,7 +62,7 @@ public class Playerhealth : MonoBehaviour {
 
 	void Update()
 	{
-		//currenthealth.text = phealth.ToString();
+		currentplayerhealth = phealth;
 
 		if(phealth<=50 && phealth>=40)
 		{
@@ -132,12 +134,22 @@ public class Playerhealth : MonoBehaviour {
 		{
 
 			Instantiate (sparks,ehit.point,transform.rotation);
+
+			if(pcollide.gameObject.name == "bbullet1(Clone)")
+			{
+			phealth = phealth-2;
+			}
+			if(pcollide.gameObject.name == "bbullet(Clone)")
+			{
 			phealth = phealth-1;
+			}
+
+
+
 
 
 			healthcounter = Mathf.Abs(phealth/10);
 
-			//print (healthcounter);
 			/*switch (healthcounter)
 			{
 			case 4:
@@ -162,12 +174,12 @@ public class Playerhealth : MonoBehaviour {
 				break;	
 			}*/
 
-			if(phealth ==10)
+			if(phealth <=10)
 			{
 				transform.FindChild("playershield").gameObject.SetActive(false);
 			}
 			
-			if(phealth ==0)
+			if(phealth <=0)
 			{
 			//	gameObject.GetComponentInChildren<TrailRenderer>().enabled = false;
 				hcircle.transform.renderer.material = deathmat;
