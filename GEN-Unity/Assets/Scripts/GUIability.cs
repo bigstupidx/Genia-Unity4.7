@@ -109,6 +109,10 @@ public class GUIability : MonoBehaviour {
 			for(int i = 0;i<enemycount;i++){
 				eobjs[i].transform.FindChild("Nose shooter").gameObject.SetActive(false);
 				eobjs[i].GetComponent<EnemyAI>().enabled = false;
+				if(eobjs[i].gameObject.name == "bouy2(Clone)")
+				{
+					eobjs[i].transform.FindChild("Nose shooter2").gameObject.SetActive(false);
+				}
 			}
 
 			freezestart.coustarter();

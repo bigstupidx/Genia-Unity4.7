@@ -95,15 +95,64 @@ public class GameMaster : MonoBehaviour {
 		for(int i = 0;i<4;i++){
 			enemyobjs[i].transform.FindChild("Nose shooter").gameObject.SetActive(true);
 			enemyobjs[i].GetComponent<EnemyAI>().enabled = true;
+			if(enemyobjs[i].gameObject.name == "bouy2(Clone)")
+			{
+			enemyobjs[i].transform.FindChild("Nose shooter2").gameObject.SetActive(true);
+			}
 		}
 		GUIability.freezer = false;
 	}
 
 	public void Creator()
 	{
-		ranrespot = Random.Range(0,2);
+		//random enemy
+		randomenemyholder = Random.Range(0,2);
 
-		Instantiate(Renemy, respots[ranrespot].transform.position, respots[ranrespot].transform.rotation);
+		ranrespot = Random.Range(0,3);
+
+		//increase enemy level counter
+		enemylevelcounter++;
+		
+		if(enemylevelcounter<=15)	
+		{
+			Instantiate(Renemy, respots[ranrespot].transform.position, respots[ranrespot].transform.rotation);
+		}
+		
+		if(enemylevelcounter>=16 && enemylevelcounter <= 30)
+		{Instantiate(renemy2, respots[ranrespot].transform.position, respots[ranrespot].transform.rotation);
+		}
+		
+		if(enemylevelcounter>=31 && enemylevelcounter <= 45)
+		{
+			Instantiate(renemy3, respots[ranrespot].transform.position, respots[ranrespot].transform.rotation);
+		}
+
+		if(enemylevelcounter>=46)
+			
+		{
+			
+			switch(randomenemyholder)
+				
+			{
+			case 0:
+				Instantiate(Renemy, respots[ranrespot].transform.position, respots[ranrespot].transform.rotation);
+				break;
+				
+			case 1:
+				Instantiate(renemy2, respots[ranrespot].transform.position, respots[ranrespot].transform.rotation);
+				break;
+				
+			case 2:
+				Instantiate(renemy3, respots[ranrespot].transform.position, respots[ranrespot].transform.rotation);
+				break;
+				
+			}
+			
+		}
+
+
+
+	//	Instantiate(Renemy, respots[ranrespot].transform.position, respots[ranrespot].transform.rotation);
 
 	}
 }

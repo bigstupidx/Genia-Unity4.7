@@ -3,18 +3,18 @@ using System.Collections;
 
 public class Playerhealth : MonoBehaviour {
 
-	public static int phealth;
-	public int mainhealth;
+	public static float phealth;
+	public float mainhealth;
 	public GUIText currenthealth;
 	public int healthint =0;
 	public static bool uphealth = false;
 	public Material[] healthcircle;
 	public GameObject hcircle;
 	public GameObject sparks;
-	private int healthcounter =0;
+	private float healthcounter =0;
 	public Material deathmat;
 
-	public int currentplayerhealth =0;
+	public float currentplayerhealth =0;
 
 	//material health changer
 	public Material healthmat;
@@ -109,7 +109,11 @@ public class Playerhealth : MonoBehaviour {
 			currentenemies = GameObject.FindGameObjectsWithTag("Enemy");
 			for(int i = 0;i<4;i++){
 				currentenemies[i].transform.FindChild("Nose shooter").gameObject.SetActive(false);
-				currentenemies[i].GetComponent<EnemyAI>().enabled =false;		
+				currentenemies[i].GetComponent<EnemyAI>().enabled =false;	
+				if(currentenemies[i].gameObject.name == "bouy2(Clone)")
+				{
+				currentenemies[i].transform.FindChild("Nose shooter2").gameObject.SetActive(false);
+				}
 			}
 			suckeroffer.gameObject.SetActive(false);
 		}
@@ -137,13 +141,16 @@ public class Playerhealth : MonoBehaviour {
 
 			if(pcollide.gameObject.name == "bbullet1(Clone)")
 			{
-			phealth = phealth-2;
+			phealth = phealth-.5f;
 			}
 			if(pcollide.gameObject.name == "bbullet(Clone)")
 			{
 			phealth = phealth-1;
 			}
-
+			if(pcollide.gameObject.name == "bbullet2(Clone)")
+			{
+			phealth = phealth-2;
+			}
 
 
 
