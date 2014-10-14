@@ -28,7 +28,7 @@ public class Playerhealth : MonoBehaviour {
 	public GameObject suckeroffer;
 
 	//enemy stop at death
-	private GameObject[] currentenemies;
+	public GameObject[] currentenemies;
 	//wait time
 	public float waittime = 0;
 	//UIpanel to enable
@@ -102,7 +102,7 @@ public class Playerhealth : MonoBehaviour {
 		}
 
 
-		if(phealth ==0)
+		if(phealth <0)
 		{
 
 

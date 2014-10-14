@@ -21,6 +21,9 @@ public class gameover : MonoBehaviour {
 		deadtext.text = finaldead.ToString();
 		timetext.text = finaltime.ToString();
 
+		print (PlayerPrefs.GetInt("HScore")+ " current high score");
+		print (finaldead + "final dead");
+
 		if(PlayerPrefs.GetInt("HScore")<finaldead)
 		{
 			StartCoroutine(Blinking());

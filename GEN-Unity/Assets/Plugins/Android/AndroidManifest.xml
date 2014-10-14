@@ -11,7 +11,7 @@
     <!-- Block End -->
     
     <!-- Google Cloud Service Block Start -->
-    <meta-data android:name="com.google.android.gms.appstate.APP_ID" android:value="@string/app_id" />
+<!--    <meta-data android:name="com.google.android.gms.appstate.APP_ID" android:value="@string/app_id" />-->
     <!-- Block End -->
     
     <activity android:name="com.androidnative.AndroidNativeBridge" android:label="@string/app_name" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:launchMode="singleTask" android:screenOrientation="landscape">
@@ -21,12 +21,12 @@
       </intent-filter>
 
 		<!-- Twitter Block Start -->
-		<intent-filter>
+<!--		<intent-filter>
 			<action android:name="android.intent.action.VIEW" />
 			<category android:name="android.intent.category.DEFAULT" />
 			<category android:name="android.intent.category.BROWSABLE" />
 			<data android:scheme="oauth" android:host="androidnative" />
-		</intent-filter>
+		</intent-filter>-->
 		<!-- Block End -->
 		
 
@@ -49,7 +49,7 @@
     <!-- Block End -->
        
     <!-- Facebook Block Start -->      
-    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="\ 395891937214418" />
+<!--    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="\ 395891937214418" />
     <activity
         android:name="com.facebook.LoginActivity"
         android:label="@string/app_name"
@@ -58,7 +58,7 @@
     <activity android:name="com.facebook.unity.FBUnityLoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
     </activity>
     <activity android:name="com.facebook.unity.FBUnityDeepLinkingActivity" android:exported="true">
-    </activity>
+    </activity>-->
     <!-- Block End -->
     
     
@@ -86,20 +86,20 @@
   
   
   <!-- Permition reuired by Billing service -->
-  <uses-permission android:name="com.android.vending.BILLING" />
+<!--  <uses-permission android:name="com.android.vending.BILLING" />-->
   <!-- Block End -->
 
   <!-- Permition reuired by Cloud Message -->
-  <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+<!--  <uses-permission android:name="android.permission.GET_ACCOUNTS" />
   <uses-permission android:name="android.permission.WAKE_LOCK" />
   <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
   <permission android:name="com.example.gcm.permission.C2D_MESSAGE" android:protectionLevel="signature" />
   <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
    <!-- Block End -->
   
   <!-- Permition reuired by AddressBook -->
-  <uses-permission android:name="android.permission.READ_CONTACTS" />
+<!--  <uses-permission android:name="android.permission.READ_CONTACTS" />-->
   <!-- Block End -->
   
   
