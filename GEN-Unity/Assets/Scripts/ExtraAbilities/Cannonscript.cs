@@ -9,18 +9,22 @@ public class Cannonscript : MonoBehaviour {
 	//cannon bullet
 	public GameObject cannonbullet;
 	//set bool
-	public bool animon;
+	public bool animon = false;
+	//wait time between bullet
+	public float bulletwaittime = 0;
+	//time of whole animation
+	public float activeanimfloat = 0;
 
 
 	// Use this for initialization
 	void Start () {
-		animon  = false;
 
 	}
 
 	void OnEnable()
 
 	{
+		animon = true;
 		cannonanim = GetComponent<Animator>();
 
 		cannonanim.SetTrigger("active");
@@ -31,12 +35,12 @@ public class Cannonscript : MonoBehaviour {
 	IEnumerator Activecannon()
 
 	{
-		animon = true;
+
 		yield return new WaitForSeconds(.5f);
 
 		cannonattack();
 
-		yield return new WaitForSeconds(5f);
+		yield return new WaitForSeconds(activeanimfloat);
 		animon = false;
 		cannonanim.SetTrigger("stop");
 	}
@@ -44,21 +48,23 @@ public class Cannonscript : MonoBehaviour {
 	void cannonattack()
 
 	{
+		GameObject canbull;
 	
 		if(animon){
-		Instantiate(cannonbullet,emitter.transform.position,Quaternion.identity);
+	canbull = Instantiate(cannonbullet,emitter.transform.position,emitter.transform.rotation)as GameObject;
+			canbull.gameObject.transform.Rotate(0,0,90);
 		}
 		StartCoroutine(Waiter());
 	}
 
 	IEnumerator Waiter()
 	{
-		yield return new WaitForSeconds(.3f);
+		yield return new WaitForSeconds(bulletwaittime);
 		cannonattack();
 
 	}
 
 	void Update () {
-	
+			
 	}
 }

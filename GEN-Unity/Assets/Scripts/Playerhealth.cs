@@ -133,7 +133,12 @@ public class Playerhealth : MonoBehaviour {
 			transform.FindChild("playershield").gameObject.SetActive(false);
 			StartCoroutine(playerdeath());
 		}
-			
+
+		if(pcollide.collider.tag == "ExAbilityobj" )
+		{
+			Physics.IgnoreCollision(pcollide.gameObject.collider,collider);
+		}
+	
 		if(pcollide.collider.tag == "eattack")
 		{
 

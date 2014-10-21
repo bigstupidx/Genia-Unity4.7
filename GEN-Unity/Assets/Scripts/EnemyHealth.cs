@@ -32,7 +32,7 @@ public class EnemyHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		renderer.materials[0].color = Color.Lerp(ebluemat, eredmat, health / 5f);
+		renderer.materials[2].color = Color.Lerp(ebluemat, eredmat, health / 5f);
 
 		if(health <=0)
 		{
@@ -58,15 +58,6 @@ public class EnemyHealth : MonoBehaviour {
 			health = health / 2;
 		}
 
-//		if(health <=0 && EnemyAIscript.enabled)
-//		{
-//			GameMaster.respawncounter++;
-//			DeadEnemyCounter.enemiesdead++;
-//			EnemyAIscript.enabled = !EnemyAIscript.enabled;
-//			Instantiate(deadbouy,transform.position,transform.rotation);
-//			rigidbody.freezeRotation = true;
-//			Destroy(this.gameObject);
-//		}
 	}
 	void OnCollisionEnter(Collision other)
 	{
@@ -84,6 +75,11 @@ public class EnemyHealth : MonoBehaviour {
 		if(other.collider.tag == "pattack")
 		{
 			health = health -1;
+		}
+
+		if(other.collider.tag == "ExAbilityobj")
+		{
+			health = 0;
 		}
 	
 	}
