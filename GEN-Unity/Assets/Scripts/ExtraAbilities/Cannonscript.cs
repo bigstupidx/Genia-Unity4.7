@@ -43,6 +43,8 @@ public class Cannonscript : MonoBehaviour {
 		yield return new WaitForSeconds(activeanimfloat);
 		animon = false;
 		cannonanim.SetTrigger("stop");
+		yield return new WaitForSeconds(.5f);
+		gameObject.SetActive(false);
 	}
 
 	void cannonattack()

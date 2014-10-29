@@ -146,7 +146,7 @@ public class Playerhealth : MonoBehaviour {
 
 			if(pcollide.gameObject.name == "bbullet1(Clone)")
 			{
-			phealth = phealth-.5f;
+			phealth = phealth-.2f;
 			}
 			if(pcollide.gameObject.name == "bbullet(Clone)")
 			{
