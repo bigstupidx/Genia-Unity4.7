@@ -35,11 +35,21 @@ public class extraabilities : MonoBehaviour {
 
 	// player location
 	public Transform playerlocation;
+
+	//new variable exab use counter
+	public int exabusecounter = 0;
 	
 	
 	void Start()
 	{
+		exabusecounter = 0;
+
 		StartCoroutine(Quick10());
+	}
+
+	void Update()
+	{
+
 	}
 	
 	IEnumerator Quick10()
@@ -47,20 +57,28 @@ public class extraabilities : MonoBehaviour {
 		
 		if(exabfirsttime)
 		{
-			yield return new WaitForSeconds(15f);
+			yield return new WaitForSeconds(13f);
 			exabfirsttime = false;
 		}
 		else
 		{
 			yield return new WaitForSeconds(exabtimecount);	
 		}
+
+		print(DeadEnemyCounter.enemiesdead);
 		
-		
-		if(DeadEnemyCounter.enemiesdead >= exabrequirementholder)
+		if((DeadEnemyCounter.enemiesdead - (1*exabusecounter))>= exabrequirementholder)
 		{
 			exabchosen = Random.Range(1,exababilityamount);
 			exablabel.gameObject.SetActive(true);
 			
+			exabusecounter = exabusecounter + exabrequirementholder;
+			print ("did meet requirement");
+		}
+		else
+		{
+			print ("didn't meet requirement");
+			StartCoroutine(Quick10());
 		}
 		
 	}
@@ -110,9 +128,8 @@ public class extraabilities : MonoBehaviour {
 	{
 		for(int i = 1;i<=10;i++)
 		{
-			GameObject newbomb;
 			Instantiate(exabbombs, playerlocation.position, playerlocation.rotation);
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(.7f);
 		}
 
 	}
