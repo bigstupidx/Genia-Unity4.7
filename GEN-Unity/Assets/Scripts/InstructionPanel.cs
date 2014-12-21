@@ -31,7 +31,7 @@ public class InstructionPanel : MonoBehaviour {
 	public void forwardtexture()		
 	{
 		textcounter++; 
-		if(textcounter == 8)
+		if(textcounter == 9)
 		{
 		
 			helptextpanel.mainTexture = helptext[textcounter];

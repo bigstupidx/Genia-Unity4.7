@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\BAX\BAXIS\Assets\Scripts\Mazecontrol.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\InstructionPanel.cs">
     <Files>
-      <File FileName="..\..\BAX\BAXIS\Assets\Scripts\Mazecontrol.cs" Line="28" Column="1" />
+      <File FileName="Assets\Scripts\InstructionPanel.cs" Line="34" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
